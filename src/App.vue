@@ -1,53 +1,17 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import ruLang from 'element-plus/dist/locale/ru';
+import FooterApp from '@/components/FooterApp.vue';
+import HeaderApp from '@/components/HeaderApp.vue';
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    >
+  <el-config-provider :locale="ruLang">
+    <el-container direction="vertical">
+      <header-app />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+      <el-main>Main</el-main>
 
-  <main>
-    <TheWelcome />
-  </main>
+      <footer-app />
+    </el-container>
+  </el-config-provider>
 </template>
-
-<style scoped lang="scss">
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
