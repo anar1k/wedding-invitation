@@ -7,12 +7,19 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AContainer: typeof import('./src/components/UI/AContainer.vue')['default']
+    AnimatedElement: typeof import('./src/components/UI/AnimatedElement.vue')['default']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElFooter: typeof import('element-plus/es')['ElFooter']
     ElHeader: typeof import('element-plus/es')['ElHeader']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElImage: typeof import('element-plus/es')['ElImage']
     ElMain: typeof import('element-plus/es')['ElMain']
     FooterApp: typeof import('./src/components/FooterApp.vue')['default']
     HeaderApp: typeof import('./src/components/HeaderApp.vue')['default']
+    MainApp: typeof import('./src/components/MainApp/MainApp.vue')['default']
+    MainHero: typeof import('./src/components/MainApp/MainHero.vue')['default']
+    UContainer: typeof import('./src/components/UI/UContainer.vue')['default']
   }
 }

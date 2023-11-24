@@ -2,16 +2,15 @@
 import ruLang from 'element-plus/dist/locale/ru';
 import FooterApp from '@/components/FooterApp.vue';
 import HeaderApp from '@/components/HeaderApp.vue';
+import MainApp from '@/components/MainApp/MainApp.vue';
 </script>
 
 <template>
   <el-config-provider :locale="ruLang">
-    <el-container direction="vertical">
-      <header-app />
+    <header-app />
 
-      <el-main>Main</el-main>
+    <main-app />
 
-      <footer-app />
-    </el-container>
+    <footer-app />
   </el-config-provider>
 </template>

@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import colors from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 module.exports = {
   content: [
     './index.html',
@@ -6,7 +9,16 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    colors: {
+      primary: '#fda4af',
+      ...colors
+    },
+
+    extend: {
+      fontFamily: {
+        caveat: ['"Caveat"', ...defaultTheme.fontFamily.sans]
+      }
+    },
   },
 
   plugins: [],

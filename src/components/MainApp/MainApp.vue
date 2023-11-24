@@ -1,9 +1,11 @@
 <script setup lang="ts">
-
+import MainHero from './MainHero.vue';
 </script>
 
 <template>
-  <header>Header</header>
+  <main>
+    <main-hero />
+  </main>
 </template>
 
 <style scoped lang="scss">
