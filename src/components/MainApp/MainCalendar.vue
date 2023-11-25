@@ -3,7 +3,7 @@ import UContainer from '@/components/UI/UContainer.vue';
 </script>
 
 <template>
-  <section>
+  <section id="calendar">
     <u-container>
       <h2 class="text-center text-primary text-5xl font-caveat font-bold mb-4">
         Когда?
@@ -26,7 +26,7 @@ import UContainer from '@/components/UI/UContainer.vue';
 
             <img
               v-if="data.day.split('-').slice(1)[1] === '20'"
-              src="/bg-heart.png"
+              src="/bg-heart.webp"
               alt=""
               class="absolute inset-0 scale-[3.5] z-0"
             >

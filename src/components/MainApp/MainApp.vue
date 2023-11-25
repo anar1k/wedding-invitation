@@ -7,12 +7,9 @@ import MainHero from './MainHero.vue';
   <main>
     <main-hero />
 
-    <el-divider border-style="dashed" />
+    <el-divider />
 
-    <main-calendar
-      data-aos="fade-up"
-      data-aos-anchor-placement="center-bottom"
-    />
+    <main-calendar />
   </main>
 </template>
 

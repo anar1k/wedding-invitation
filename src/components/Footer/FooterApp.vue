@@ -16,12 +16,14 @@ import UContainer from '@/components/UI/UContainer.vue';
         Сайт-приглашение на свадьбу
       </p>
 
-      <img
-        loading="lazy"
-        class="w-48"
-        src="/heart.webp"
-        alt=""
-      >
+      <div class="relative w-48 h-14">
+        <img
+          loading="lazy"
+          class="absolute inset-0 h-full mx-auto"
+          src="/heart.webp"
+          alt=""
+        >
+      </div>
     </u-container>
   </footer>
 </template>
