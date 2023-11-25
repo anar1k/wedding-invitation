@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <header>Header</header>
+  <header>
+    header
+  </header>
 </template>
 
 <style scoped lang="scss">

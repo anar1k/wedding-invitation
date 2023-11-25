@@ -4,7 +4,10 @@ import UContainer from '@/components/UI/UContainer.vue';
 
 <template>
   <footer class="bg-primary text-white">
-    <u-container class="py-12 flex flex-col justify-center items-center">
+    <u-container
+      class="py-12 flex flex-col justify-center items-center"
+      data-aos="zoom-in"
+    >
       <h3 class="text-5xl font-caveat">
         Карина и Анар
       </h3>

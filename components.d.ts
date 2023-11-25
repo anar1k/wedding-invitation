@@ -7,18 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AContainer: typeof import('./src/components/UI/AContainer.vue')['default']
-    AnimatedElement: typeof import('./src/components/UI/AnimatedElement.vue')['default']
+    ElBacktop: typeof import('element-plus/es')['ElBacktop']
+    ElCalendar: typeof import('element-plus/es')['ElCalendar']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    ElContainer: typeof import('element-plus/es')['ElContainer']
-    ElFooter: typeof import('element-plus/es')['ElFooter']
-    ElHeader: typeof import('element-plus/es')['ElHeader']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElImage: typeof import('element-plus/es')['ElImage']
-    ElMain: typeof import('element-plus/es')['ElMain']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
     FooterApp: typeof import('./src/components/FooterApp.vue')['default']
     HeaderApp: typeof import('./src/components/HeaderApp.vue')['default']
     MainApp: typeof import('./src/components/MainApp/MainApp.vue')['default']
+    MainCalendar: typeof import('./src/components/MainApp/MainCalendar.vue')['default']
     MainHero: typeof import('./src/components/MainApp/MainHero.vue')['default']
     UContainer: typeof import('./src/components/UI/UContainer.vue')['default']
   }
