@@ -10,7 +10,22 @@ const openDrawer = (): void => {
 </script>
 
 <template>
-  <div>
+  <div class="flex items-center justify-between">
+    <a
+      href="#"
+      aria-label="home"
+    >
+      <svg
+        width="24"
+        height="24"
+      >
+        <use
+          class="text-primary"
+          href="/icons.svg#heart"
+        />
+      </svg>
+    </a>
+
     <div
       @click="openDrawer"
       @keydown="openDrawer"
@@ -20,8 +35,8 @@ const openDrawer = (): void => {
         height="24"
       >
         <use
+          class="text-primary"
           href="/icons.svg#burger"
-          color="pink"
         />
       </svg>
     </div>
