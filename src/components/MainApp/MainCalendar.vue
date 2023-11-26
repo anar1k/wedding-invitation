@@ -15,7 +15,7 @@ import UContainer from '@/components/UI/UContainer.vue';
         :range="[new Date(2024, 3, 8), new Date(2024, 4, 3)]"
       >
         <template #header>
-          <span class="font-medium text-xl">Апрель: {{ new Date(2024, 3, 20).toLocaleDateString() }}</span>
+          <span class="font-medium text-xl text-secondary">Апрель: {{ new Date(2024, 3, 20).toLocaleDateString() }}</span>
         </template>
 
         <template #date-cell="{ data }">

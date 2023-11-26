@@ -9,9 +9,12 @@ declare module 'vue' {
   export interface GlobalComponents {
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElCalendar: typeof import('element-plus/es')['ElCalendar']
+    ElCard: typeof import('element-plus/es')['ElCard']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElCountdown: typeof import('element-plus/es')['ElCountdown']
     ElDivider: typeof import('element-plus/es')['ElDivider']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     FooterApp: typeof import('./src/components/Footer/FooterApp.vue')['default']
     HeaderApp: typeof import('./src/components/Header/HeaderApp.vue')['default']
     HeaderMobileNav: typeof import('./src/components/Header/HeaderMobileNav.vue')['default']

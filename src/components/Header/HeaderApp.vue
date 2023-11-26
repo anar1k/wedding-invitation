@@ -22,7 +22,7 @@ onBeforeUnmount(() => {
 <template>
   <header
     class="py-4 md:py-8 fixed top-0 inset-x-0 z-50 transition duration-300 text-white"
-    :class="isScrolled ? 'shadow bg-white text-secondary' : ''"
+    :class="isScrolled ? 'shadow bg-white !text-secondary' : ''"
   >
     <u-container>
       <header-nav class="hidden md:flex items-center justify-center gap-x-4" />

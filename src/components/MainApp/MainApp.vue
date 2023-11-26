@@ -7,9 +7,9 @@ import MainHero from './MainHero.vue';
   <main>
     <main-hero />
 
-    <el-divider />
-
-    <main-calendar />
+    <el-card class="box-card">
+      <main-calendar />
+    </el-card>
   </main>
 </template>
 
