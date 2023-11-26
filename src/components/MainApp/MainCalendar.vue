@@ -26,6 +26,7 @@ import UContainer from '@/components/UI/UContainer.vue';
 
             <img
               v-if="data.day.split('-').slice(1)[1] === '20'"
+              loading="lazy"
               src="/bg-heart.webp"
               alt=""
               class="absolute inset-0 scale-[3.5] z-0"
