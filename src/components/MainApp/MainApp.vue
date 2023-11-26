@@ -4,7 +4,7 @@ import MainHero from './MainHero.vue';
 </script>
 
 <template>
-  <main class="pt-28">
+  <main>
     <main-hero />
 
     <el-divider />

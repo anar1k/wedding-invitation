@@ -1,6 +1,5 @@
 node_modules
 dist
-build
 
 .eslintrc.cjs
 components.d.ts
@@ -8,4 +7,3 @@ auto-imports.d.ts
 env.d.ts
 postcss.config.js
 tailwind.config.ts
-_shared

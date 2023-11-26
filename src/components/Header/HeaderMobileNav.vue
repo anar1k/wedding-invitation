@@ -19,10 +19,7 @@ const openDrawer = (): void => {
         width="24"
         height="24"
       >
-        <use
-          class="text-primary"
-          href="/icons.svg#heart"
-        />
+        <use href="/icons.svg#heart" />
       </svg>
     </a>
 
@@ -34,10 +31,7 @@ const openDrawer = (): void => {
         width="24"
         height="24"
       >
-        <use
-          class="text-primary"
-          href="/icons.svg#burger"
-        />
+        <use href="/icons.svg#burger" />
       </svg>
     </div>
 
@@ -46,11 +40,7 @@ const openDrawer = (): void => {
       :with-header="false"
       size="auto"
     >
-      <header-nav class="flex flex-col gap-y-4 px-4" />
+      <header-nav class="flex flex-col items-end gap-y-4 px-4 text-secondary" />
     </el-drawer>
   </div>
 </template>
-
-<style scoped lang="scss">
-
-</style>
