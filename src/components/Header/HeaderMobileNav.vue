@@ -2,6 +2,14 @@
 import { ref } from 'vue';
 import HeaderNav from '@/components/Header/HeaderNav.vue';
 
+interface IProps {
+  isScrolled?: boolean
+}
+
+withDefaults(defineProps<IProps>(), {
+  isScrolled: false,
+});
+
 const drawer = ref<boolean>(false);
 
 const openDrawer = (): void => {
@@ -16,6 +24,8 @@ const openDrawer = (): void => {
       aria-label="home"
     >
       <svg
+        v-show="isScrolled"
+        class="text-secondary"
         width="24"
         height="24"
       >

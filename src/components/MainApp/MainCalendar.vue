@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import UContainer from '@/components/UI/UContainer.vue';
+import { ref } from 'vue';
+import { dayjs } from 'element-plus';
+import type { Dayjs } from 'dayjs';
 
+const countdown = ref<Dayjs>(dayjs('2024-04-20').startOf('seconds'));
 interface TDataCell {
   type: 'prev-month' | 'current-month' | 'next-month',
   isSelected: boolean,
   day: string,
 }
 
-const getClassForCell = (data: TDataCell) => {
+const getClassForCell = (data: TDataCell): string => {
   if (data.day.split('-').slice(1)[1] === '20') return 'text-primary font-medium md:text-xl';
 
   if (data.type !== 'current-month') return 'opacity-25';
@@ -25,9 +29,15 @@ const getClassForCell = (data: TDataCell) => {
         :range="[new Date(2024, 3, 8), new Date(2024, 4, 3)]"
       >
         <template #header>
-          <div class="flex-1 font-medium text-xl text-secondary text-center">
-            Апрель: {{ new Date(2024, 3, 20).toLocaleDateString() }}
+          <div class="font-medium text-xl text-secondary">
+            Апрель
           </div>
+
+          <el-countdown
+            class="text-secondary"
+            format="DD [дней] HH:mm:ss"
+            :value="countdown"
+          />
         </template>
 
         <template #date-cell="{ data }">
@@ -38,10 +48,11 @@ const getClassForCell = (data: TDataCell) => {
 
             <img
               v-if="data.day.split('-').slice(1)[1] === '20'"
+              data-aos="zoom-in"
               loading="lazy"
               src="/bg-heart.webp"
               alt=""
-              class="absolute inset-0 scale-[3.5] z-0"
+              class="absolute inset-0 z-0"
             >
           </div>
         </template>
@@ -52,6 +63,14 @@ const getClassForCell = (data: TDataCell) => {
 
 <style lang="scss" scoped>
 :deep(.el-calendar__header) {
-  border: none;
+  @apply border-none
+}
+
+:deep(.el-statistic__content) {
+  @apply text-secondary
+}
+
+[data-aos^=zoom][data-aos^=zoom].aos-animate {
+ transform: translateZ(0) scale(3.5)
 }
 </style>

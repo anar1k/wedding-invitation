@@ -27,7 +27,10 @@ onBeforeUnmount(() => {
     <u-container>
       <header-nav class="hidden md:flex items-center justify-center gap-x-4" />
 
-      <header-mobile-nav class="md:hidden" />
+      <header-mobile-nav
+        class="md:hidden"
+        :is-scrolled="isScrolled"
+      />
     </u-container>
   </header>
 </template>

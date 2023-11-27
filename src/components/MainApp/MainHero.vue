@@ -8,7 +8,7 @@ import UContainer from '@/components/UI/UContainer.vue';
       <h1 class="font-caveat flex justify-center items-center gap-x-4 text-5xl md:text-7xl">
         <span>Карина</span>
 
-        <svg class="w-11 h-11">
+        <svg class="w-11 h-11 animate-pulse">
           <use
             href="/icons.svg#heart"
             width="44"
@@ -21,8 +21,6 @@ import UContainer from '@/components/UI/UContainer.vue';
 
       <h4 class="text-xl md:text-3xl mt-4">
         Приглашаем на нашу свадьбу!
-        <br>
-        20.04.2024
       </h4>
     </u-container>
   </section>

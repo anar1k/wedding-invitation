@@ -6,6 +6,10 @@ interface ILink {
 
 const links: ILink[] = [
   {
+    name: 'Приглашение',
+    link: '#calendar',
+  },
+  {
     name: 'О нас',
     link: '#',
   },
@@ -17,10 +21,6 @@ const links: ILink[] = [
     name: 'F.A.Q.',
     link: '#calendar',
   },
-  {
-    name: 'Подтвердить',
-    link: '#calendar',
-  },
 ];
 </script>
 
@@ -30,9 +30,9 @@ const links: ILink[] = [
       v-for="(item, index) in links"
       :key="item.name + index"
       :href="item.link"
-      class="hover:underline text-current font-serif text-sm"
+      class="hover:underline text-current font-serif text-sm uppercase"
     >
-      {{ item.name.toUpperCase() }}
+      {{ item.name }}
     </a>
   </nav>
 </template>
