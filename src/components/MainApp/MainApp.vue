@@ -7,12 +7,6 @@ import MainHero from './MainHero.vue';
   <main>
     <main-hero />
 
-    <el-card class="box-card">
-      <main-calendar />
-    </el-card>
+    <main-calendar class="-mt-12" />
   </main>
 </template>
-
-<style scoped lang="scss">
-
-</style>

@@ -24,8 +24,8 @@ onMounted(() => {
 
     <el-backtop
       class="!text-primary"
-      :right="50"
-      :bottom="50"
+      :right="30"
+      :bottom="30"
     />
   </el-config-provider>
 </template>
