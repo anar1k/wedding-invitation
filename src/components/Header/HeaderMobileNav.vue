@@ -29,7 +29,7 @@ const openDrawer = (): void => {
         width="24"
         height="24"
       >
-        <use href="/icons.svg#heart" />
+        <use href="/images/icons.svg#heart" />
       </svg>
     </a>
 
@@ -41,7 +41,7 @@ const openDrawer = (): void => {
         width="24"
         height="24"
       >
-        <use href="/icons.svg#burger" />
+        <use href="/images/icons.svg#burger" />
       </svg>
     </div>
 

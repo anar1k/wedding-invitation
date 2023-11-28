@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import MainCalendar from '@/components/MainApp/MainCalendar.vue';
 import MainAboutUs from '@/components/MainApp/MainAboutUs.vue';
-import MainHero from './MainHero.vue';
+import MainHero from './MainHero/MainHero.vue';
 </script>
 
 <template>

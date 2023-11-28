@@ -8,14 +8,11 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
-    ElButton: typeof import('element-plus/es')['ElButton']
     ElCalendar: typeof import('element-plus/es')['ElCalendar']
-    ElCard: typeof import('element-plus/es')['ElCard']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElCountdown: typeof import('element-plus/es')['ElCountdown']
     ElDivider: typeof import('element-plus/es')['ElDivider']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
     FooterApp: typeof import('./src/components/Footer/FooterApp.vue')['default']
     HeaderApp: typeof import('./src/components/Header/HeaderApp.vue')['default']
     HeaderMobileNav: typeof import('./src/components/Header/HeaderMobileNav.vue')['default']
@@ -23,7 +20,8 @@ declare module 'vue' {
     MainAboutUs: typeof import('./src/components/MainApp/MainAboutUs.vue')['default']
     MainApp: typeof import('./src/components/MainApp/MainApp.vue')['default']
     MainCalendar: typeof import('./src/components/MainApp/MainCalendar.vue')['default']
-    MainHero: typeof import('./src/components/MainApp/MainHero.vue')['default']
+    MainHero: typeof import('./src/components/MainApp/MainHero/MainHero.vue')['default']
+    MainHeroBackground: typeof import('./src/components/MainApp/MainHero/MainHeroBackground.vue')['default']
     UContainer: typeof import('./src/components/UI/UContainer.vue')['default']
   }
 }

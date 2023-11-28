@@ -20,7 +20,7 @@ import UContainer from '@/components/UI/UContainer.vue';
         <img
           loading="lazy"
           class="absolute inset-0 h-full mx-auto"
-          src="/heart.webp"
+          src="/images/hearts.webp"
           alt=""
         >
       </div>

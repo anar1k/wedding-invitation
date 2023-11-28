@@ -50,7 +50,7 @@ const getClassForCell = (data: TDataCell): string => {
               v-if="data.day.split('-').slice(1)[1] === '20'"
               data-aos="zoom-in"
               loading="lazy"
-              src="/bg-heart.webp"
+              src="/images/heart.webp"
               alt=""
               class="absolute inset-0 z-0"
             >
