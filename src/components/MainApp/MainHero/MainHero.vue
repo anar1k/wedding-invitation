@@ -7,7 +7,7 @@ import MainHeroBackground from '@/components/MainApp/MainHero/MainHeroBackground
   <section class="relative">
     <main-hero-background />
 
-    <u-container class="h-[100svh] text-center text-white pt-16 md:pt-24">
+    <u-container class="h-[85svh] text-center text-white py-16 md:py-24">
       <h1 class="font-caveat flex justify-center items-center gap-x-4 text-5xl md:text-7xl">
         <span>Карина</span>
 
