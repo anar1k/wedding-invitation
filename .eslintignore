@@ -1,0 +1,9 @@
+node_modules
+dist
+
+.eslintrc.cjs
+components.d.ts
+auto-imports.d.ts
+env.d.ts
+postcss.config.js
+tailwind.config.ts

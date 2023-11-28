@@ -20,6 +20,7 @@ declare module 'vue' {
     HeaderApp: typeof import('./src/components/Header/HeaderApp.vue')['default']
     HeaderMobileNav: typeof import('./src/components/Header/HeaderMobileNav.vue')['default']
     HeaderNav: typeof import('./src/components/Header/HeaderNav.vue')['default']
+    MainAboutUs: typeof import('./src/components/MainApp/MainAboutUs.vue')['default']
     MainApp: typeof import('./src/components/MainApp/MainApp.vue')['default']
     MainCalendar: typeof import('./src/components/MainApp/MainCalendar.vue')['default']
     MainHero: typeof import('./src/components/MainApp/MainHero.vue')['default']

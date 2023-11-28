@@ -25,7 +25,7 @@ const openDrawer = (): void => {
     >
       <svg
         v-show="isScrolled"
-        class="text-secondary"
+        class="text-neutral"
         width="24"
         height="24"
       >
@@ -50,7 +50,7 @@ const openDrawer = (): void => {
       :with-header="false"
       size="auto"
     >
-      <header-nav class="flex flex-col items-end gap-y-4 px-4 text-secondary" />
+      <header-nav class="flex flex-col items-end gap-y-4 px-4 text-neutral" />
     </el-drawer>
   </div>
 </template>

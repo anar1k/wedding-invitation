@@ -29,12 +29,12 @@ const getClassForCell = (data: TDataCell): string => {
         :range="[new Date(2024, 3, 8), new Date(2024, 4, 3)]"
       >
         <template #header>
-          <div class="font-medium text-xl text-secondary">
+          <div class="font-medium text-xl text-neutral">
             Апрель
           </div>
 
           <el-countdown
-            class="text-secondary"
+            class="text-neutral"
             format="DD [дней] HH:mm:ss"
             :value="countdown"
           />
@@ -67,7 +67,7 @@ const getClassForCell = (data: TDataCell): string => {
 }
 
 :deep(.el-statistic__content) {
-  @apply text-secondary
+  @apply text-neutral
 }
 
 [data-aos^=zoom][data-aos^=zoom].aos-animate {

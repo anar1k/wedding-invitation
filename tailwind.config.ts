@@ -9,16 +9,28 @@ module.exports = {
   ],
 
   theme: {
-    colors: {
-      primary: '#fda4af',
-      secondary: '#9ca3af',
-      ...colors
-    },
-
     extend: {
       fontFamily: {
         caveat: ['"Caveat"', ...defaultTheme.fontFamily.sans]
-      }
+      },
+
+      colors: {
+        primary: {
+          DEFAULT: '#fda4af',
+          ...colors.rose
+        },
+
+        neutral: {
+          DEFAULT: '#9ca3af',
+          ...colors.gray
+        },
+      },
+
+/*      screens: {
+        'lg': '800px',
+        'xl': '800px',
+        '2xl': '800px',
+      },*/
     },
   },
 
