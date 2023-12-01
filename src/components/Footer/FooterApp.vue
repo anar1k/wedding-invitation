@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import UContainer from '@/components/UI/UContainer.vue';
+import DoubleHeart from '@/components/Icons/DoubleHeart.vue';
 </script>
 
 <template>
-  <footer class="bg-primary text-white">
+  <footer class="bg-white text-primary">
     <u-container
       class="py-12 flex flex-col justify-center items-center"
       data-aos="zoom-in"
@@ -16,14 +17,9 @@ import UContainer from '@/components/UI/UContainer.vue';
         Сайт-приглашение на свадьбу
       </p>
 
-      <div class="relative w-48 h-14">
-        <img
-          loading="lazy"
-          class="absolute inset-0 h-full mx-auto"
-          src="/images/heart-2.webp"
-          alt=""
-        >
-      </div>
+      <double-heart
+        class="mx-auto"
+      />
     </u-container>
   </footer>
 </template>

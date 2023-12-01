@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import UContainer from '@/components/UI/UContainer.vue';
+import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
 
 const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
 </script>
@@ -7,7 +8,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
 <template>
   <section class="about-us">
     <u-container class="flex flex-col items-center text-center">
-      <h2 class="text-4xl text-neutral font-semibold mb-8 md:mb-12">Карина & Анар</h2>
+      <h2 class="text-4xl text-primary font-semibold mb-8 md:mb-12">Карина & Анар</h2>
 
       <ul class="text-lg font-light flex flex-col gap-y-3 mb-8">
         <li>Дорогие друзья!</li>
@@ -37,7 +38,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
         <svg
           width="24"
           height="24"
-          class="text-neutral -scale-x-100"
+          class="text-primary -scale-x-100"
         >
           <use href="/images/icons.svg#heart" />
         </svg>
@@ -48,10 +49,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
         />
       </div>
 
-      <img
-        src="/images/adventure-begins.svg"
-        alt=""
-      >
+      <adventure-begins class="text-primary" />
     </u-container>
   </section>
 </template>

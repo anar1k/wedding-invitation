@@ -16,14 +16,14 @@ module.exports = {
 
       colors: {
         primary: {
-          DEFAULT: '#fda4af',
-          ...colors.rose
+          DEFAULT: '#78716c',
+          ...colors.stone
         },
 
-        neutral: {
-          DEFAULT: '#595958',
-          ...colors.gray
-        },
+        secondary: {
+          DEFAULT: '#fda4af',
+          ...colors.rose
+        }
       },
 
       screens: {
