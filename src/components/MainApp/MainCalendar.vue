@@ -69,10 +69,6 @@ const getClassForCell = (data: TDataCell): string => {
   @apply border-none
 }
 
-:deep(.el-calendar__body) {
-  padding-bottom: 0;
-}
-
 :deep(.el-statistic__content) {
   @apply text-primary
 }
