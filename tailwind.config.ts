@@ -21,16 +21,16 @@ module.exports = {
         },
 
         neutral: {
-          DEFAULT: '#9ca3af',
+          DEFAULT: '#595958',
           ...colors.gray
         },
       },
 
-/*      screens: {
-        'lg': '800px',
-        'xl': '800px',
-        '2xl': '800px',
-      },*/
+      screens: {
+        'lg': '700px',
+        'xl': '700px',
+        '2xl': '700px',
+      },
     },
   },
 

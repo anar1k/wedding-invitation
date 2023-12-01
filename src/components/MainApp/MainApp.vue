@@ -5,7 +5,9 @@ import MainHero from './MainHero/MainHero.vue';
 </script>
 
 <template>
-  <main>
+  <main class="pb-24">
+    <div class="fixed inset-0 bg-[url('/images/background.webp')] bg-no-repeat bg-cover -z-20" />
+
     <main-hero />
 
     <main-calendar class="-mt-12" />

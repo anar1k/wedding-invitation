@@ -21,11 +21,14 @@ const getClassForCell = (data: TDataCell): string => {
 </script>
 
 <template>
-  <section id="calendar">
+  <section
+    id="calendar"
+    class="relative"
+  >
     <u-container>
       <el-calendar
         inert
-        class="w-full md:w-1/2 mx-auto rounded-2xl"
+        class="w-full rounded-2xl"
         :range="[new Date(2024, 3, 8), new Date(2024, 4, 3)]"
       >
         <template #header>
@@ -50,7 +53,7 @@ const getClassForCell = (data: TDataCell): string => {
               v-if="data.day.split('-').slice(1)[1] === '20'"
               data-aos="zoom-in"
               loading="lazy"
-              src="/images/heart.webp"
+              src="/images/heart-1.webp"
               alt=""
               class="absolute inset-0 z-0"
             >
