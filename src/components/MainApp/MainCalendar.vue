@@ -69,11 +69,23 @@ const getClassForCell = (data: TDataCell): string => {
   @apply border-none
 }
 
+:deep(.el-calendar__body) {
+  padding-bottom: 0;
+}
+
 :deep(.el-statistic__content) {
   @apply text-primary
 }
 
 [data-aos^=zoom][data-aos^=zoom].aos-animate {
  transform: translateZ(0) scale(3.5)
+}
+
+:deep(.el-calendar-day) {
+  --el-calendar-cell-width: auto;
+
+  @screen md {
+    --el-calendar-cell-width: 60px;
+  }
 }
 </style>

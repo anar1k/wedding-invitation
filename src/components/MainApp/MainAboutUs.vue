@@ -2,11 +2,14 @@
 import UContainer from '@/components/UI/UContainer.vue';
 import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
 
-const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
+/* const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'; */
 </script>
 
 <template>
-  <section class="about-us">
+  <section
+    class="about-us"
+    id="about"
+  >
     <u-container class="flex flex-col items-center text-center">
       <h2 class="text-4xl text-primary font-semibold mb-8 md:mb-12">Карина & Анар</h2>
 
@@ -29,7 +32,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
         </li>
       </ul>
 
-      <div class="flex justify-center items-center gap-x-12 mb-8 md:mb-16">
+      <!--      <div class="flex justify-center items-center gap-x-12 mb-8 md:mb-16">
         <el-avatar
           class="about-us__avatar"
           :src="circleUrl"
@@ -47,7 +50,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
           class="about-us__avatar"
           :src="circleUrl"
         />
-      </div>
+      </div>-->
 
       <adventure-begins class="text-primary" />
     </u-container>

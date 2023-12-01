@@ -22,7 +22,7 @@ import MainHeroBackground from '@/components/MainApp/MainHero/MainHeroBackground
         <span>Анар</span>
       </h1>
 
-      <h4 class="text-xl md:text-3xl mt-4">
+      <h4 class="text-xl md:text-3xl my-4">
         Приглашаем на нашу свадьбу!
       </h4>
     </u-container>

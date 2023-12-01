@@ -9,15 +9,11 @@ declare module 'vue' {
   export interface GlobalComponents {
     AdventureBegins: typeof import('./src/components/Icons/AdventureBegins.vue')['default']
     DoubleHeart: typeof import('./src/components/Icons/DoubleHeart.vue')['default']
-    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
-    ElButton: typeof import('element-plus/es')['ElButton']
     ElCalendar: typeof import('element-plus/es')['ElCalendar']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElCountdown: typeof import('element-plus/es')['ElCountdown']
-    ElDivider: typeof import('element-plus/es')['ElDivider']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
     FooterApp: typeof import('./src/components/Footer/FooterApp.vue')['default']
     HeaderApp: typeof import('./src/components/Header/HeaderApp.vue')['default']
     HeaderMobileNav: typeof import('./src/components/Header/HeaderMobileNav.vue')['default']
@@ -28,5 +24,6 @@ declare module 'vue' {
     MainHero: typeof import('./src/components/MainApp/MainHero/MainHero.vue')['default']
     MainHeroBackground: typeof import('./src/components/MainApp/MainHero/MainHeroBackground.vue')['default']
     UContainer: typeof import('./src/components/UI/UContainer.vue')['default']
+    UDivider: typeof import('./src/components/UI/UDivider.vue')['default']
   }
 }

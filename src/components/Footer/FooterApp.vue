@@ -17,9 +17,7 @@ import DoubleHeart from '@/components/Icons/DoubleHeart.vue';
         Сайт-приглашение на свадьбу
       </p>
 
-      <double-heart
-        class="mx-auto"
-      />
+      <double-heart class="mx-auto" />
     </u-container>
   </footer>
 </template>

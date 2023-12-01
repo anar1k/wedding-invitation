@@ -26,7 +26,7 @@ onMounted(() => {
 
         <main-app />
 
-        <footer-app />
+        <footer-app class="border-t border-primary-300" />
 
         <el-backtop
           class="!text-secondary"

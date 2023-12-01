@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import MainCalendar from '@/components/MainApp/MainCalendar.vue';
 import MainAboutUs from '@/components/MainApp/MainAboutUs.vue';
+import UDivider from '@/components/UI/UDivider.vue';
 import MainHero from './MainHero/MainHero.vue';
 </script>
 
@@ -12,14 +13,8 @@ import MainHero from './MainHero/MainHero.vue';
 
     <main-calendar class="-mt-12" />
 
-    <el-divider />
+    <u-divider />
 
     <main-about-us />
   </main>
 </template>
-
-<style scoped lang="scss">
-:deep(.el-divider--horizontal) {
-  @apply my-20
-}
-</style>
