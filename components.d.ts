@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AdventureBegins: typeof import('./src/components/Icons/AdventureBegins.vue')['default']
     DoubleHeart: typeof import('./src/components/Icons/DoubleHeart.vue')['default']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElCalendar: typeof import('element-plus/es')['ElCalendar']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']

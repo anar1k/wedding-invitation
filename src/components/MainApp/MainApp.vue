@@ -7,7 +7,7 @@ import MainHero from './MainHero/MainHero.vue';
 
 <template>
   <main class="pb-24">
-    <div class="fixed inset-0 bg-[url('/images/background.webp')] bg-no-repeat bg-cover -z-20" />
+    <div class="fixed inset-0 -z-20 h-[100svh] bg-[url('/images/background.webp')] bg-no-repeat bg-cover bg-center" />
 
     <main-hero />
 

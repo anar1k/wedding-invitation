@@ -2,7 +2,7 @@
 import UContainer from '@/components/UI/UContainer.vue';
 import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
 
-/* const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'; */
+const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
 </script>
 
 <template>
@@ -32,7 +32,7 @@ import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
         </li>
       </ul>
 
-      <!--      <div class="flex justify-center items-center gap-x-12 mb-8 md:mb-16">
+      <div class="flex justify-center items-center gap-x-6 md:gap-x-12 mb-12 md:mb-16">
         <el-avatar
           class="about-us__avatar"
           :src="circleUrl"
@@ -41,7 +41,7 @@ import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
         <svg
           width="24"
           height="24"
-          class="text-primary -scale-x-100"
+          class="text-secondary -scale-x-100"
         >
           <use href="/images/icons.svg#heart" />
         </svg>
@@ -50,7 +50,7 @@ import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
           class="about-us__avatar"
           :src="circleUrl"
         />
-      </div>-->
+      </div>
 
       <adventure-begins class="text-primary" />
     </u-container>
@@ -59,6 +59,10 @@ import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
 
 <style lang="scss" scoped>
 .about-us__avatar {
-  --el-avatar-size: 200px
+  --el-avatar-size: 33vw;
+
+  @screen md {
+    --el-avatar-size: 200px;
+  }
 }
 </style>
