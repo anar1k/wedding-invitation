@@ -1,2 +1,20 @@
 @forward "tailwind";
 @forward "fonts";
+
+::-webkit-scrollbar {
+  @apply w-1.5;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary-400;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary-50;
+}
+
+
