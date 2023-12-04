@@ -9,6 +9,10 @@ module.exports = {
   ],
 
   theme: {
+    screens: {
+      'md': '700px',
+    },
+
     extend: {
       fontFamily: {
         caveat: ['"Caveat"', ...defaultTheme.fontFamily.sans]
@@ -24,12 +28,6 @@ module.exports = {
           DEFAULT: '#fda4af',
           ...colors.rose
         }
-      },
-
-      screens: {
-        'lg': '700px',
-        'xl': '700px',
-        '2xl': '700px',
       },
     },
   },
