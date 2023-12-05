@@ -32,12 +32,12 @@ const getClassForCell = (data: TDataCell): string => {
         :range="[new Date(2024, 3, 8), new Date(2024, 4, 3)]"
       >
         <template #header>
-          <div class="font-medium text-xl text-primary">
+          <div class="font-medium text-primary font-caveat text-2xl/none">
             Апрель
           </div>
 
           <el-countdown
-            class="text-primary"
+            class="text-primary font-caveat text-2xl/none"
             format="DD [дней] HH:mm:ss"
             :value="countdown"
           />
@@ -65,8 +65,16 @@ const getClassForCell = (data: TDataCell): string => {
 </template>
 
 <style lang="scss" scoped>
+:deep(.el-calendar-table) {
+  @apply border-separate;
+}
+
+:deep(.el-calendar-table) td {
+  @apply rounded-2xl
+}
+
 :deep(.el-calendar__header) {
-  @apply border-none
+  @apply border-none items-center
 }
 
 :deep(.el-statistic__content) {

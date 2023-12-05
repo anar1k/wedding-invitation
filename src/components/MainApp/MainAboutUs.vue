@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import UContainer from '@/components/UI/UContainer.vue';
 import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
+import UTitle from '@/components/UI/UTitle.vue';
 
 const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
 </script>
@@ -11,7 +12,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
     id="about"
   >
     <u-container class="flex flex-col items-center text-center">
-      <h2 class="text-4xl text-primary font-semibold mb-8 md:mb-12">Карина & Анар</h2>
+      <u-title>Карина & Анар</u-title>
 
       <ul class="text-lg font-light flex flex-col gap-y-3 mb-8">
         <li>Дорогие друзья!</li>

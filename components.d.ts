@@ -26,5 +26,6 @@ declare module 'vue' {
     MainHeroBackground: typeof import('./src/components/MainApp/MainHero/MainHeroBackground.vue')['default']
     UContainer: typeof import('./src/components/UI/UContainer.vue')['default']
     UDivider: typeof import('./src/components/UI/UDivider.vue')['default']
+    UTitle: typeof import('./src/components/UI/UTitle.vue')['default']
   }
 }
