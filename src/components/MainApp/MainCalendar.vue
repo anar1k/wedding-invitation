@@ -37,7 +37,7 @@ const getClassForCell = (data: TDataCell): string => {
           </div>
 
           <el-countdown
-            class="text-primary font-caveat text-2xl/none"
+            class="font-caveat text-2xl/none"
             format="DD [дней] HH:mm:ss"
             :value="countdown"
           />
