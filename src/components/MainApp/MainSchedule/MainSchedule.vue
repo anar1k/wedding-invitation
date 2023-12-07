@@ -5,7 +5,7 @@ import MainScheduleItem from '@/components/MainApp/MainSchedule/MainScheduleItem
 </script>
 
 <template>
-  <section>
+  <section id="schedule">
     <u-container>
       <u-title class="text-center">Программа дня</u-title>
 

@@ -15,7 +15,7 @@ const links: ILink[] = [
   },
   {
     name: 'Программа дня',
-    link: '#plan',
+    link: '#schedule',
   },
   {
     name: 'F.A.Q.',

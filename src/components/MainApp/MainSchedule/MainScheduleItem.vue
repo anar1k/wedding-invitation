@@ -1,15 +1,13 @@
 <script setup lang="ts">
-
 import { Star } from '@element-plus/icons-vue';
 </script>
 
 <template>
   <li
-    class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-20 pb-3 last:pb-0 group"
-  >
+    class="flex flex-col md:flex-row items-center md:items-stretch gap-2 md:gap-20 pb-3 last:pb-0 group text-center md:text-left">
     <h4 class="text-xl md:text-2xl text-primary">09:00</h4>
 
-    <div class="flex flex-col items-center gap-y-2">
+    <div class="hidden md:flex flex-col items-center gap-y-2">
       <svg class="w-6 h-6">
         <use
           href="/images/icons.svg#heart"
@@ -30,7 +28,7 @@ import { Star } from '@element-plus/icons-vue';
 
       <button
         type="button"
-        class="underline text-primary-400 hover:text-secondary focus:text-secondary text-left transition"
+        class="border-b border-primary-400 hover:border-secondary focus:border-secondary text-primary-400 hover:text-secondary focus:text-secondary text-left transition"
       >
         Россия, Москва, Певческий переулок, 4с1
       </button>

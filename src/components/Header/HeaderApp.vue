@@ -25,7 +25,7 @@ onBeforeUnmount(() => {
     :class="isScrolled ? 'shadow bg-white/95 !text-primary' : ''"
   >
     <u-container>
-      <header-nav class="hidden md:flex items-center justify-center gap-x-4" />
+      <header-nav class="hidden md:flex items-center justify-center gap-x-6" />
 
       <header-mobile-nav
         class="md:hidden"
