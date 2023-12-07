@@ -53,7 +53,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
         />
       </div>
 
-      <adventure-begins class="text-primary" />
+      <adventure-begins class="text-secondary" />
     </u-container>
   </section>
 </template>
