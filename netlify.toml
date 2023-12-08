@@ -1,0 +1,7 @@
+[dev]
+  command = "vite --host"
+
+[build]
+  command = "vite build"
+  functions = "netlify/functions"
+  publish = "dist"

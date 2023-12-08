@@ -19,7 +19,7 @@ const links: ILink[] = [
   },
   {
     name: 'F.A.Q.',
-    link: '#faq',
+    link: '#questions',
   },
 ];
 </script>
