@@ -1,7 +1,7 @@
-const nodemailer = require('nodemailer');
+/*const nodemailer = require('nodemailer');*/
 
 exports.handler = async function(/*event, context*/) {
-    // Создаем транспорт для отправки email
+/*    // Создаем транспорт для отправки email
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -19,7 +19,7 @@ exports.handler = async function(/*event, context*/) {
     };
 
     // Отправляем email
-    await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);*/
 
     return {
         statusCode: 200,
