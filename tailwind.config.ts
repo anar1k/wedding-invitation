@@ -20,12 +20,12 @@ module.exports = {
 
       colors: {
         primary: {
-          DEFAULT: '#78716c',
+          DEFAULT: '#a8a29e',
           ...colors.stone
         },
 
         secondary: {
-          DEFAULT: '#fda4af',
+          DEFAULT: '#fb7185',
           ...colors.rose
         }
       },
