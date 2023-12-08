@@ -4,7 +4,7 @@ import MainHeroBackground from '@/components/MainApp/MainHero/MainHeroBackground
 import axios from 'axios';
 
 const testApi = async (): Promise<void> => {
-  const { data } = await axios.get('.netlify/functions/hello');
+  const { data } = await axios.get('.netlify/functions/sendEmail');
 
   console.log(data);
 };
