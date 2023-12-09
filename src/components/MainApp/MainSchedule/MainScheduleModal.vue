@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import MainScheduleMap from '@/components/MainApp/MainSchedule/MainScheduleMap.vue';
 
 interface IProps {
-  modelValue?: boolean
+  modelValue?: boolean,
 }
 
 const props = withDefaults(defineProps<IProps>(), {
@@ -28,30 +28,17 @@ const dialogVisible = computed<boolean>({
 <template>
   <el-dialog
     v-model="dialogVisible"
-    top="5svh"
-    title="Событие на карте"
+    center
+    top="10svh"
     width="100%"
     class="max-w-[700px] !rounded-2xl"
   >
-    <main-schedule-map />
+    <template #header>
+      <span class="text-secondary text-xl font-medium">Событие на карте</span>
+    </template>
 
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="dialogVisible = false">Cancel</el-button>
-
-        <el-button
-          type="primary"
-          @click="dialogVisible = false"
-        >
-          Confirm
-        </el-button>
-      </span>
+    <template #default>
+      <main-schedule-map />
     </template>
   </el-dialog>
 </template>
-
-<style scoped lang="scss">
-.dialog-footer button:first-child {
-  margin-right: 10px;
-}
-</style>

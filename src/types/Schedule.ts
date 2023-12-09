@@ -1,6 +1,8 @@
-interface IAddress {
+export type TCoordinates = [number, number];
+
+export interface IAddress {
   text: string,
-  coordinates: string
+  coordinates: TCoordinates
 }
 
 export interface ISchedule {

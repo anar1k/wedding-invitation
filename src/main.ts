@@ -1,10 +1,11 @@
-import './assets/styles/global.scss';
-import 'aos/dist/aos.css';
 import { createApp } from 'vue';
 import { dayjs } from 'element-plus';
 import 'dayjs/locale/ru';
 import { createYmaps } from 'vue-yandex-maps';
 import App from './App.vue';
+
+import 'aos/dist/aos.css';
+import './assets/styles/global.scss';
 
 dayjs.locale('ru');
 

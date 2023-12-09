@@ -8,6 +8,14 @@ import eslint from 'vite-plugin-eslint';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "@/assets/styles/element/index.scss" as *;',
+      },
+    },
+  },
+
   plugins: [
     vue(),
 

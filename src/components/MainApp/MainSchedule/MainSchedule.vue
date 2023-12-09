@@ -4,12 +4,16 @@ import UTitle from '@/components/UI/UTitle.vue';
 import MainScheduleItem from '@/components/MainApp/MainSchedule/MainScheduleItem.vue';
 import MainScheduleModal from '@/components/MainApp/MainSchedule/MainScheduleModal.vue';
 import type { ISchedule } from '@/types/Schedule';
-import { ref } from 'vue';
+import { ref, provide, readonly } from 'vue';
 
 const dialogVisible = ref<boolean>(false);
+const currentCoordinates = ref<[number, number] | null>(null);
 
-const handleClick = (): void => {
+provide('coordinates', readonly(currentCoordinates));
+
+const handleClick = (coordinates: [number, number]): void => {
   dialogVisible.value = true;
+  currentCoordinates.value = coordinates;
 };
 
 const schedules: ISchedule[] = [
@@ -24,7 +28,7 @@ const schedules: ISchedule[] = [
     description: 'Присутствие по желанию',
     address: {
       text: 'ул. Зарайская, 17, Калининград, Калининградская обл., 236006',
-      coordinates: '54.710346737896856, 20.517167810901118',
+      coordinates: [20.517167810901118, 54.710346737896856],
     },
   },
 
@@ -33,7 +37,7 @@ const schedules: ISchedule[] = [
     title: 'Сбор гостей в ресторане, праздничный фуршет',
     address: {
       text: 'пр-т. Мира, 105, 1 этаж, Калининград, Калининградская обл., 236010',
-      coordinates: '54.720808582785594, 20.45570241298354',
+      coordinates: [20.45570241298354, 54.720808582785594],
     },
   },
 ];
@@ -59,6 +63,9 @@ const schedules: ISchedule[] = [
       </ul>
     </u-container>
 
-    <main-schedule-modal v-model="dialogVisible" />
+    <main-schedule-modal
+      v-model="dialogVisible"
+      :schedules="schedules"
+    />
   </section>
 </template>

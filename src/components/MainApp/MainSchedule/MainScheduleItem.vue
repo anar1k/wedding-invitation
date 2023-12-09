@@ -4,10 +4,10 @@ import type { ISchedule } from '@/types/Schedule';
 defineProps<ISchedule>();
 
 const emit = defineEmits<{
-  click: [id: string]
+  click: [id: [number, number]]
 }>();
 
-const handleButton = (coordinates: string): void => {
+const handleButton = (coordinates: [number, number]): void => {
   emit('click', coordinates);
 };
 </script>

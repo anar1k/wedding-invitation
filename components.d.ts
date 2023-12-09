@@ -18,6 +18,8 @@ declare module 'vue' {
     ElDialog: typeof import('element-plus/es')['ElDialog']
     ElDivider: typeof import('element-plus/es')['ElDivider']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
+    ElOption: typeof import('element-plus/es')['ElOption']
+    ElSelect: typeof import('element-plus/es')['ElSelect']
     FooterApp: typeof import('./src/components/Footer/FooterApp.vue')['default']
     HeaderApp: typeof import('./src/components/Header/HeaderApp.vue')['default']
     HeaderMobileNav: typeof import('./src/components/Header/HeaderMobileNav.vue')['default']
