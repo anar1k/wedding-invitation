@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import MainScheduleMap from '@/components/MainApp/MainSchedule/MainScheduleMap.vue';
+import type { ISchedule } from '@/types/Schedule';
 
 interface IProps {
   modelValue?: boolean,
+  selectedSchedule: ISchedule | null
 }
 
 const props = withDefaults(defineProps<IProps>(), {
   modelValue: false,
+  selectedSchedule: null,
 });
 
 const emit = defineEmits<{
@@ -38,7 +41,7 @@ const dialogVisible = computed<boolean>({
     </template>
 
     <template #default>
-      <main-schedule-map />
+      <main-schedule-map :location="selectedSchedule?.address?.coordinates" />
     </template>
   </el-dialog>
 </template>

@@ -4,17 +4,7 @@ import UTitle from '@/components/UI/UTitle.vue';
 import MainScheduleItem from '@/components/MainApp/MainSchedule/MainScheduleItem.vue';
 import MainScheduleModal from '@/components/MainApp/MainSchedule/MainScheduleModal.vue';
 import type { ISchedule } from '@/types/Schedule';
-import { ref, provide, readonly } from 'vue';
-
-const dialogVisible = ref<boolean>(false);
-const currentCoordinates = ref<[number, number] | null>(null);
-
-provide('coordinates', readonly(currentCoordinates));
-
-const handleClick = (coordinates: [number, number]): void => {
-  dialogVisible.value = true;
-  currentCoordinates.value = coordinates;
-};
+import { ref } from 'vue';
 
 const schedules: ISchedule[] = [
   {
@@ -41,6 +31,18 @@ const schedules: ISchedule[] = [
     },
   },
 ];
+
+const dialogVisible = ref<boolean>(false);
+const selectedSchedule = ref<ISchedule | null>(null);
+
+const handleClick = (schedule: ISchedule): void => {
+  const { address } = schedule;
+
+  if (address && address.coordinates) {
+    dialogVisible.value = true;
+    selectedSchedule.value = schedule;
+  }
+};
 </script>
 
 <template>
@@ -55,17 +57,14 @@ const schedules: ISchedule[] = [
           v-for="(item, index) in schedules"
           @click="handleClick"
           :key="index"
-          :time="item.time"
-          :title="item.title"
-          :description="item.description"
-          :address="item.address"
+          :schedule="item"
         />
       </ul>
     </u-container>
 
     <main-schedule-modal
       v-model="dialogVisible"
-      :schedules="schedules"
+      :selected-schedule="selectedSchedule"
     />
   </section>
 </template>

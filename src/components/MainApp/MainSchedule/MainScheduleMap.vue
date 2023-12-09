@@ -5,14 +5,17 @@ import {
   YandexMapDefaultSchemeLayer,
   YandexMapZoomControl,
 } from 'vue-yandex-maps';
-import { shallowRef, inject } from 'vue';
+import { shallowRef } from 'vue';
 import type { YMap } from '@yandex/ymaps3-types';
+import type { TCoordinates } from '@/types/Schedule';
 
-const defaultCoordinates: [number, number] = [20.510134, 54.710162];
+interface IProps {
+  location?: TCoordinates
+}
 
-const coordinatesInject = inject<[number, number]>('coordinates');
-
-const currentCoordinates = coordinatesInject || defaultCoordinates;
+withDefaults(defineProps<IProps>(), {
+  location: () => [20.510134, 54.710162],
+});
 
 const map = shallowRef<null | YMap>(null);
 </script>
@@ -22,7 +25,7 @@ const map = shallowRef<null | YMap>(null);
     v-model="map"
     :settings="{
       location: {
-        center: currentCoordinates,
+        center: location,
         zoom: 14,
       },
     }"

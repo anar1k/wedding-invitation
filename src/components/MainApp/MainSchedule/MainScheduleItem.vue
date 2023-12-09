@@ -1,20 +1,22 @@
 <script setup lang="ts">
 import type { ISchedule } from '@/types/Schedule';
 
-defineProps<ISchedule>();
-
-const emit = defineEmits<{
-  click: [id: [number, number]]
+const props = defineProps<{
+  schedule: ISchedule
 }>();
 
-const handleButton = (coordinates: [number, number]): void => {
-  emit('click', coordinates);
+const emit = defineEmits<{
+  click: [item: ISchedule]
+}>();
+
+const handleButton = (): void => {
+  emit('click', props.schedule);
 };
 </script>
 
 <template>
   <li class="group flex gap-4 md:gap-10 pb-3 last:pb-0">
-    <h4 class="text-xl md:text-2xl text-secondary">{{ time }}</h4>
+    <h4 class="text-xl md:text-2xl text-secondary">{{ schedule.time }}</h4>
 
     <div class="flex flex-col items-center gap-y-2">
       <svg class="w-6 h-6">
@@ -31,16 +33,16 @@ const handleButton = (coordinates: [number, number]): void => {
     </div>
 
     <div class="pb-4 md:pb-8 md:group-last:pb-0 space-y-2 md:space-y-4">
-      <h4 class="text-xl md:text-2xl text-secondary">{{ title }}</h4>
+      <h4 class="text-xl md:text-2xl text-secondary">{{ schedule.title }}</h4>
 
       <p
-        v-if="!!description"
-        class="text-primary">{{ description }}
+        v-if="!!schedule.description"
+        class="text-primary">{{ schedule.description }}
       </p>
 
       <button
-        v-if="!!address"
-        @click="handleButton(address.coordinates)"
+        v-if="!!schedule.address && !!schedule.address.coordinates && !!schedule.address.text"
+        @click="handleButton"
         type="button"
         class="underline
                md:no-underline
@@ -55,7 +57,7 @@ const handleButton = (coordinates: [number, number]): void => {
                transition
         "
       >
-        {{ address.text }}
+        {{ schedule.address.text }}
       </button>
     </div>
   </li>
