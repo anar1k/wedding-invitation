@@ -1,13 +1,6 @@
 <script setup lang="ts">
 import UContainer from '@/components/UI/UContainer.vue';
 import MainHeroBackground from '@/components/MainApp/MainHero/MainHeroBackground.vue';
-import axios from 'axios';
-
-const testApi = async (): Promise<void> => {
-  const { data } = await axios.get('.netlify/functions/sendEmail');
-
-  console.log(data);
-};
 </script>
 
 <template>
@@ -32,10 +25,6 @@ const testApi = async (): Promise<void> => {
       <h4 class="text-xl md:text-3xl my-4">
         Приглашаем на нашу свадьбу!
       </h4>
-
-      <el-button @click="testApi">
-        test
-      </el-button>
     </u-container>
   </section>
 </template>

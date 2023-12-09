@@ -1,6 +1,8 @@
 /*const nodemailer = require('nodemailer');*/
 
-exports.handler = async function(/*event, context*/) {
+/*import { Context } from "@netlify/functions";*/
+
+export default async (/*req: Request, context: Context*/) => {
 /*    // Создаем транспорт для отправки email
     const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -21,8 +23,5 @@ exports.handler = async function(/*event, context*/) {
     // Отправляем email
     await transporter.sendMail(mailOptions);*/
 
-    return {
-        statusCode: 200,
-        body: 'Email sent successfully'
-    };
+    return new Response('Email sent successfully')
 };

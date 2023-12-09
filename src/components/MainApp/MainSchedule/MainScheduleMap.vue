@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { YandexMap, YandexMapDefaultSchemeLayer } from 'vue-yandex-maps';
 import { shallowRef } from 'vue';
+import type { YMap } from '@yandex/ymaps3-types';
 
-const map = shallowRef(null);
+const map = shallowRef<null | YMap>(null);
 </script>
 
 <template>
