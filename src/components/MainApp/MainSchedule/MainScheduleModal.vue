@@ -41,6 +41,16 @@ const dialogVisible = computed<boolean>({
     </template>
 
     <template #default>
+      <ul class="text-primary text-base">
+        <li>
+          {{ selectedSchedule?.time }} - {{ selectedSchedule?.title }}
+        </li>
+
+        <li>
+          По адресу: {{ selectedSchedule?.address?.text }}
+        </li>
+      </ul>
+
       <main-schedule-map :location="selectedSchedule?.address?.coordinates" />
     </template>
   </el-dialog>
