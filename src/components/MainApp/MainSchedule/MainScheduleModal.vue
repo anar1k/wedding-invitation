@@ -34,24 +34,32 @@ const dialogVisible = computed<boolean>({
     center
     top="10svh"
     width="100%"
-    class="max-w-[700px] !rounded-2xl"
+    class="schedule-modal max-w-[700px] !rounded-2xl"
   >
     <template #header>
-      <span class="text-secondary text-xl font-medium">Событие на карте</span>
+      <div class="text-primary font-medium">
+        <h3 class="text-xl">
+          {{ selectedSchedule?.title }}
+        </h3>
+
+        <h4 class="text-lg">
+          {{ selectedSchedule?.time }}
+        </h4>
+      </div>
     </template>
 
     <template #default>
-      <ul class="text-primary text-base">
-        <li>
-          {{ selectedSchedule?.time }} - {{ selectedSchedule?.title }}
-        </li>
-
-        <li>
-          По адресу: {{ selectedSchedule?.address?.text }}
-        </li>
-      </ul>
+      <p class="text-neutral text-base pb-3 text-center">
+        {{ selectedSchedule?.address?.text }}
+      </p>
 
       <main-schedule-map :location="selectedSchedule?.address?.coordinates" />
     </template>
   </el-dialog>
 </template>
+
+<style lang="scss">
+.schedule-modal .el-dialog__body {
+  @apply pt-0 #{!important};
+}
+</style>

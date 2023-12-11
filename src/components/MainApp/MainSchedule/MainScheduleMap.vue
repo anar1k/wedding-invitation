@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import {
   YandexMap,
-  YandexMapControls, YandexMapDefaultFeaturesLayer,
-  YandexMapDefaultSchemeLayer, YandexMapMarker,
+  YandexMapControls,
+  YandexMapDefaultFeaturesLayer,
+  YandexMapDefaultMarker,
+  YandexMapDefaultSchemeLayer, YandexMapOpenMapsButton,
   YandexMapZoomControl,
 } from 'vue-yandex-maps';
 import { shallowRef } from 'vue';
@@ -39,19 +41,10 @@ const map = shallowRef<null | YMap>(null);
       <yandex-map-zoom-control />
     </yandex-map-controls>
 
-    <yandex-map-marker :settings="{ coordinates: location }">
-      <div
-        class="relative
-                  w-6
-                  h-6
-                  rounded-full
-                  shadow-lg
-                  shadow-indigo-500/50
-                  bg-secondary
-                  border-2
-                  border-white
-      "
-      />
-    </yandex-map-marker>
+    <yandex-map-default-marker :settings="{ coordinates: location, color: '#f43f5e' }" />
+
+    <yandex-map-controls :settings="{ position: 'bottom left', orientation: 'vertical' }">
+      <yandex-map-open-maps-button />
+    </yandex-map-controls>
   </yandex-map>
 </template>

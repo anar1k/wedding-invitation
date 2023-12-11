@@ -12,7 +12,7 @@ interface TDataCell {
 }
 
 const getClassForCell = (data: TDataCell): string => {
-  if (data.day.split('-').slice(1)[1] === '20') return 'text-secondary font-medium md:text-xl';
+  if (data.day.split('-').slice(1)[1] === '20') return 'text-primary font-medium md:text-xl';
 
   if (data.type !== 'current-month') return 'opacity-25';
 

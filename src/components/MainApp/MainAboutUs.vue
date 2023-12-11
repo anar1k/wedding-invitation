@@ -8,8 +8,8 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
 
 <template>
   <section
-    class="about-us"
     id="about"
+    class="about-us"
   >
     <u-container class="flex flex-col items-center text-center">
       <u-title>Карина & Анар</u-title>
@@ -42,7 +42,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
         <svg
           width="24"
           height="24"
-          class="text-secondary -scale-x-100"
+          class="text-primary -scale-x-100"
         >
           <use href="/images/icons.svg#heart" />
         </svg>
@@ -53,7 +53,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
         />
       </div>
 
-      <adventure-begins class="text-secondary" />
+      <adventure-begins class="text-neutral" />
     </u-container>
   </section>
 </template>

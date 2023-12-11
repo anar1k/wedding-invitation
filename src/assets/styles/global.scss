@@ -6,15 +6,15 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-secondary;
+  @apply bg-primary;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-secondary;
+  @apply bg-primary;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-secondary-50;
+  @apply bg-primary-50;
 }
 
 

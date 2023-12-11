@@ -4,7 +4,7 @@ import DoubleHeart from '@/components/Icons/DoubleHeart.vue';
 </script>
 
 <template>
-  <footer class="bg-white text-primary">
+  <footer class="bg-white text-neutral">
     <u-container
       class="py-12 flex flex-col justify-center items-center"
       data-aos="zoom-in"

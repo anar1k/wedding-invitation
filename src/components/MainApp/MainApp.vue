@@ -3,6 +3,7 @@ import MainCalendar from '@/components/MainApp/MainCalendar.vue';
 import MainAboutUs from '@/components/MainApp/MainAboutUs.vue';
 import UDivider from '@/components/UI/UDivider.vue';
 import MainSchedule from '@/components/MainApp/MainSchedule/MainSchedule.vue';
+import MainQuestions from '@/components/MainApp/MainQuestions.vue';
 import MainHero from './MainHero/MainHero.vue';
 </script>
 
@@ -21,5 +22,9 @@ import MainHero from './MainHero/MainHero.vue';
     <u-divider />
 
     <main-schedule />
+
+    <u-divider />
+
+    <main-questions />
   </main>
 </template>

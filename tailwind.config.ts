@@ -20,13 +20,13 @@ module.exports = {
 
       colors: {
         primary: {
-          DEFAULT: '#a8a29e',
-          ...colors.stone
-        },
-
-        secondary: {
           DEFAULT: '#fb7185',
           ...colors.rose
+        },
+
+        neutral: {
+          DEFAULT: '#a8a29e',
+          ...colors.stone
         }
       },
     },

@@ -25,7 +25,6 @@ const openDrawer = (): void => {
     >
       <svg
         v-show="isScrolled"
-        class="text-primary"
         width="24"
         height="24"
       >

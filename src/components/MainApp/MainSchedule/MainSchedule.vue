@@ -52,7 +52,7 @@ const handleClick = (schedule: ISchedule): void => {
         Программа дня
       </u-title>
 
-      <h3 class="text-center text-xl md:text-2xl text-primary-500 pb-8 md:pb-14">
+      <h3 class="text-center text-xl md:text-2xl text-neutral-500 pb-8 md:pb-14">
         20 апреля 2024 г.
       </h3>
 
