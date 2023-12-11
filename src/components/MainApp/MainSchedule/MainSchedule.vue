@@ -48,16 +48,20 @@ const handleClick = (schedule: ISchedule): void => {
 <template>
   <section id="schedule">
     <u-container>
-      <u-title class="text-center">Программа дня</u-title>
+      <u-title class="text-center">
+        Программа дня
+      </u-title>
 
-      <h3 class="text-center text-xl md:text-2xl text-primary-500 pb-8 md:pb-14">20 апреля 2024 г.</h3>
+      <h3 class="text-center text-xl md:text-2xl text-primary-500 pb-8 md:pb-14">
+        20 апреля 2024 г.
+      </h3>
 
       <ul>
         <main-schedule-item
           v-for="(item, index) in schedules"
-          @click="handleClick"
           :key="index"
           :schedule="item"
+          @click="handleClick"
         />
       </ul>
     </u-container>

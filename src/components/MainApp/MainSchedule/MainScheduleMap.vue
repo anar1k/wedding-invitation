@@ -5,7 +5,7 @@ import {
   YandexMapDefaultSchemeLayer, YandexMapMarker,
   YandexMapZoomControl,
 } from 'vue-yandex-maps';
-import { CSSProperties, shallowRef } from 'vue';
+import { shallowRef } from 'vue';
 import type { YMap } from '@yandex/ymaps3-types';
 import type { TCoordinates } from '@/types/Schedule';
 
@@ -18,20 +18,6 @@ withDefaults(defineProps<IProps>(), {
 });
 
 const map = shallowRef<null | YMap>(null);
-
-const styleObject: CSSProperties = {
-  position: 'relative',
-  width: '20px',
-  height: '20px',
-  backgroundColor: '#ff0000',
-  borderRadius: '50%',
-  border: '2px solid #ffffff',
-  boxShadow: '0 0 5px rgba(0, 0, 0, 0.5)',
-  textAlign: 'center',
-  color: '#ffffff',
-  fontWeight: 'bold',
-  lineHeight: '20px',
-};
 </script>
 
 <template>
@@ -40,7 +26,7 @@ const styleObject: CSSProperties = {
     :settings="{
       location: {
         center: location,
-        zoom: 14,
+        zoom: 15,
       },
     }"
     height="300px"
@@ -53,14 +39,19 @@ const styleObject: CSSProperties = {
       <yandex-map-zoom-control />
     </yandex-map-controls>
 
-    <yandex-map-marker
-      :settings="{
-        coordinates: location,
-      }"
-    >
-      <template #default>
-        <div :style="styleObject" />
-      </template>
+    <yandex-map-marker :settings="{ coordinates: location }">
+      <div
+        class="relative
+                  w-6
+                  h-6
+                  rounded-full
+                  shadow-lg
+                  shadow-indigo-500/50
+                  bg-secondary
+                  border-2
+                  border-white
+      "
+      />
     </yandex-map-marker>
   </yandex-map>
 </template>
