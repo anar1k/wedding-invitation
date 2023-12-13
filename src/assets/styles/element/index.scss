@@ -5,3 +5,12 @@
     ),
   ),
 );
+
+.el-overlay-dialog {
+  padding-inline: 10px;
+}
+
+.el-dialog--center .el-dialog__body {
+  padding-top: 10px;
+  padding-bottom: 25px;
+}

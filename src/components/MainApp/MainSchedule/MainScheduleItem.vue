@@ -73,8 +73,4 @@ const handleButton = (): void => {
 :deep(.el-divider) {
   --el-border-color: theme('colors.primary.DEFAULT')
 }
-
-:deep(.el-button) {
-  @apply p-0 whitespace-normal text-left;
-}
 </style>

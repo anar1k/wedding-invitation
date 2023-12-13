@@ -28,7 +28,8 @@ const dialogVisible = ref<boolean>(false);
       </ul>
 
       <u-button
-        size="large"
+        round
+        plain
         @click="dialogVisible = true"
       >
         Принять приглашение
@@ -38,9 +39,3 @@ const dialogVisible = ref<boolean>(false);
     <invitation-modal v-model="dialogVisible" />
   </section>
 </template>
-
-<style scoped lang="scss">
-:deep(.el-button) {
-  --el-button-text-color: theme('colors.primary.DEFAULT');
-}
-</style>

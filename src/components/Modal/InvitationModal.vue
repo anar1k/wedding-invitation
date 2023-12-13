@@ -2,6 +2,7 @@
 import { computed, reactive, ref } from 'vue';
 import type { FormInstance } from 'element-plus';
 import { CloseBold } from '@element-plus/icons-vue';
+import UButton from '@/components/UI/UButton.vue';
 
 interface IProps {
   modelValue?: boolean,
@@ -29,39 +30,61 @@ const dialogVisible = computed<boolean>({
 
 const formRef = ref<FormInstance>();
 
-interface DomainItem {
+const checkboxes: string[] = [
+  'Безалкогольные напитки',
+  'Красное вино',
+  'Белое вино',
+  'Шампанское',
+  'Водку',
+  'Коньяк',
+  'Другое',
+];
+
+const radios: string[] = ['Да', 'Нет'];
+
+interface IGuestItem {
   key: number
   value: string
 }
 
-const dynamicValidateForm = reactive<{
-  domains: DomainItem[]
-  email: string
-}>({
-  domains: [
+interface IForm {
+  guests: IGuestItem[],
+  accept: string,
+  typeDrink: string[],
+  anotherDrink: string
+}
+
+const dynamicValidateForm = reactive<IForm>({
+  guests: [
     {
       key: 1,
       value: '',
     },
   ],
-  email: '',
+
+  typeDrink: [],
+  anotherDrink: '',
+  accept: '',
 });
 
-const removeDomain = (item: DomainItem) => {
-  const index = dynamicValidateForm.domains.indexOf(item);
+const isShowAnotherDrink = computed<boolean>(() => dynamicValidateForm.typeDrink.some((item) => item === 'Другое'));
+
+const removeGuest = (item: IGuestItem): void => {
+  const index: number = dynamicValidateForm.guests.indexOf(item);
+
   if (index !== -1) {
-    dynamicValidateForm.domains.splice(index, 1);
+    dynamicValidateForm.guests.splice(index, 1);
   }
 };
 
-const addDomain = () => {
-  dynamicValidateForm.domains.push({
+const addGuest = (): void => {
+  dynamicValidateForm.guests.push({
     key: Date.now(),
     value: '',
   });
 };
 
-const submitForm = (formEl: FormInstance | undefined) => {
+const submitForm = (formEl: FormInstance | undefined): void => {
   if (!formEl) return;
 
   formEl.validate((valid) => {
@@ -70,6 +93,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
 
       return true;
     }
+
     console.log('error submit!');
     return false;
   });
@@ -82,7 +106,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
     center
     top="10svh"
     width="100%"
-    class="schedule-modal max-w-[700px] !rounded-2xl"
+    class="schedule-modal max-w-[500px] !rounded-2xl"
   >
     <template #header>
       <div class="text-primary font-medium">
@@ -96,40 +120,22 @@ const submitForm = (formEl: FormInstance | undefined) => {
       <el-form
         ref="formRef"
         :model="dynamicValidateForm"
-        label-width="120px"
+        status-icon
+        label-position="top"
       >
-        <!--        <el-form-item
-          prop="email"
-          label="Email"
-          :rules="[
-            {
-              required: true,
-              message: 'Please input email address',
-              trigger: 'blur',
-            },
-            {
-              type: 'email',
-              message: 'Please input correct email address',
-              trigger: ['blur', 'change'],
-            },
-          ]"
-        >
-          <el-input v-model="dynamicValidateForm.email" />
-        </el-form-item>-->
-
         <el-form-item
-          v-for="(domain, index) in dynamicValidateForm.domains"
-          :key="domain.key"
-          :label="'Domain' + index"
-          :prop="'domains.' + index + '.value'"
+          v-for="(guest, index) in dynamicValidateForm.guests"
+          :key="guest.key"
+          :label="`Гость ${index === 0 ? '' : index}`"
+          :prop="'guests.' + index + '.value'"
           :rules="{
             required: true,
-            message: 'Заполните поле!',
-            trigger: 'blur',
+            message: 'Гость не может быть пустым',
+            trigger: 'change',
           }"
         >
           <el-input
-            v-model="domain.value"
+            v-model="guest.value"
             placeholder="Имя и Фамилия"
           />
 
@@ -138,23 +144,91 @@ const submitForm = (formEl: FormInstance | undefined) => {
             :icon="CloseBold"
             circle
             class="ml-2"
-            @click.prevent="removeDomain(domain)"
+            @click.prevent="removeGuest(guest)"
           />
         </el-form-item>
 
         <el-form-item>
-          <el-button @click="addDomain">
+          <u-button
+            plain
+            @click="addGuest"
+          >
             Новый гость
-          </el-button>
+          </u-button>
         </el-form-item>
 
-        <el-form-item>
-          <el-button
-            type="primary"
+        <el-divider />
+
+        <el-form-item
+          :rules="{
+            required: true,
+            message: 'Нам необходимо знать точно',
+            trigger: 'change',
+          }"
+          label="Планируете свое присутствие?"
+          prop="accept"
+        >
+          <el-radio-group v-model="dynamicValidateForm.accept">
+            <el-radio
+              v-for="label in radios"
+              :key="label"
+              class="mr-4"
+              border
+              :label="label"
+            />
+          </el-radio-group>
+        </el-form-item>
+
+        <template v-if="dynamicValidateForm.accept === 'Да'">
+          <el-divider />
+
+          <el-form-item
+            label="Что планируете пить?"
+            prop="typeDrink"
+            :rules="{
+              required: true,
+              message: 'Выберите хотя бы один вариант!',
+              trigger: 'change',
+            }"
+          >
+            <el-checkbox-group
+              v-model="dynamicValidateForm.typeDrink"
+              class="flex flex-col"
+            >
+              <el-checkbox
+                v-for="(item, index) in checkboxes"
+                :key="index"
+                :label="item"
+                name="type"
+              />
+            </el-checkbox-group>
+          </el-form-item>
+
+          <el-form-item
+            v-if="isShowAnotherDrink"
+            label="Какой напиток вы желаете?"
+            prop="anotherDrink"
+            :rules="{
+              required: true,
+              message: 'Поле не может быть пустым',
+              trigger: 'change',
+            }"
+          >
+            <el-input
+              v-model="dynamicValidateForm.anotherDrink"
+              placeholder="Другой напиток"
+            />
+          </el-form-item>
+        </template>
+
+        <el-form-item class="mt-8 mb-0">
+          <u-button
+            class="w-full"
+            round
             @click="submitForm(formRef)"
           >
             Отправить
-          </el-button>
+          </u-button>
         </el-form-item>
       </el-form>
     </template>
@@ -163,6 +237,6 @@ const submitForm = (formEl: FormInstance | undefined) => {
 
 <style scoped lang="scss">
 :deep(.el-form-item__content) {
-  flex-wrap: nowrap;
+  @apply flex-nowrap;
 }
 </style>
