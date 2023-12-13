@@ -7,7 +7,7 @@ interface ILink {
 const links: ILink[] = [
   {
     name: 'Приглашение',
-    link: '#',
+    link: '#invitation',
   },
   {
     name: 'О нас',

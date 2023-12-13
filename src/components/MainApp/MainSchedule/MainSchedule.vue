@@ -2,7 +2,7 @@
 import UContainer from '@/components/UI/UContainer.vue';
 import UTitle from '@/components/UI/UTitle.vue';
 import MainScheduleItem from '@/components/MainApp/MainSchedule/MainScheduleItem.vue';
-import MainScheduleModal from '@/components/MainApp/MainSchedule/MainScheduleModal.vue';
+import ScheduleModal from '@/components/Modal/ScheduleModal.vue';
 import type { ISchedule } from '@/types/Schedule';
 import { ref } from 'vue';
 
@@ -66,7 +66,7 @@ const handleClick = (schedule: ISchedule): void => {
       </ul>
     </u-container>
 
-    <main-schedule-modal
+    <schedule-modal
       v-model="dialogVisible"
       :selected-schedule="selectedSchedule"
     />

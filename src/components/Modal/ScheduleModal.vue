@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import MainScheduleMap from '@/components/MainApp/MainSchedule/MainScheduleMap.vue';
+import UMap from '@/components/UI/UMap.vue';
 import type { ISchedule } from '@/types/Schedule';
 
 interface IProps {
@@ -48,18 +48,15 @@ const dialogVisible = computed<boolean>({
       </div>
     </template>
 
-    <template #default>
+    <template
+      v-if="selectedSchedule?.address"
+      #default
+    >
       <p class="text-neutral text-base pb-3 text-center">
-        {{ selectedSchedule?.address?.text }}
+        {{ selectedSchedule.address?.text }}
       </p>
 
-      <main-schedule-map :location="selectedSchedule?.address?.coordinates" />
+      <u-map :location="selectedSchedule.address?.coordinates" />
     </template>
   </el-dialog>
 </template>
-
-<style lang="scss">
-.schedule-modal .el-dialog__body {
-  @apply pt-0 #{!important};
-}
-</style>

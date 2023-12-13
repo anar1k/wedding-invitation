@@ -4,16 +4,19 @@ import MainAboutUs from '@/components/MainApp/MainAboutUs.vue';
 import UDivider from '@/components/UI/UDivider.vue';
 import MainSchedule from '@/components/MainApp/MainSchedule/MainSchedule.vue';
 import MainQuestions from '@/components/MainApp/MainQuestions.vue';
-import MainHero from './MainHero/MainHero.vue';
+import MainInvitation from '@/components/MainApp/MainInvitation.vue';
+import MainHero from './MainHero.vue';
 </script>
 
 <template>
   <main class="pb-24">
-    <div class="fixed inset-0 -z-20 h-[100svh] bg-[url('/images/background.webp')] bg-no-repeat bg-cover bg-center" />
-
     <main-hero />
 
     <main-calendar class="-mt-12" />
+
+    <u-divider />
+
+    <main-invitation />
 
     <u-divider />
 

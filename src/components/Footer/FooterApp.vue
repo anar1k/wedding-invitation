@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import UContainer from '@/components/UI/UContainer.vue';
-import DoubleHeart from '@/components/Icons/DoubleHeart.vue';
+import DoubleHeartIcon from '@/components/Icon/DoubleHeartIcon.vue';
 </script>
 
 <template>
-  <footer class="bg-white text-neutral">
+  <footer class="bg-primary text-white">
     <u-container
       class="py-12 flex flex-col justify-center items-center"
       data-aos="zoom-in"
@@ -17,7 +17,7 @@ import DoubleHeart from '@/components/Icons/DoubleHeart.vue';
         Сайт-приглашение на свадьбу
       </p>
 
-      <double-heart class="mx-auto" />
+      <double-heart-icon class="mx-auto" />
     </u-container>
   </footer>
 </template>

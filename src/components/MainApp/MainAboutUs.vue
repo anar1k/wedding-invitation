@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import UContainer from '@/components/UI/UContainer.vue';
-import AdventureBegins from '@/components/Icons/AdventureBegins.vue';
 import UTitle from '@/components/UI/UTitle.vue';
+import AdventureBeginsIcon from '@/components/Icon/AdventureBeginsIcon.vue';
 
-const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
+const circleUrl: string = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
+
+const texts: string[] = [
+  'Дорогие друзья!',
+  'Жить, любить, чувствовать. Однажды мы поняли, что нет ничего важнее этого. И что идти дальше мы хотим только вместе. А теперь мечтаем, чтобы день нашей свадьбы стал красивым и ярким событием на этом увлекательном пути.',
+  'Мы будем очень рады, если вы разделите этот счастливый день с нами.',
+  'Увидимся на нашей свадьбе!',
+];
 </script>
 
 <template>
@@ -15,21 +22,11 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
       <u-title>Карина & Анар</u-title>
 
       <ul class="text-lg font-light flex flex-col gap-y-3 mb-8">
-        <li>Дорогие друзья!</li>
-
-        <li>
-          Жить, любить, чувствовать. Однажды мы поняли, что нет ничего важнее этого.
-          И что идти дальше мы хотим только вместе.
-          А теперь мечтаем, чтобы день нашей свадьбы стал красивым
-          и ярким событием на этом увлекательном пути.
-        </li>
-
-        <li>
-          Мы будем очень рады, если вы разделите этот счастливый день с нами.
-        </li>
-
-        <li>
-          Увидимся на нашей свадьбе!
+        <li
+          v-for="(text, index) in texts"
+          :key="index"
+        >
+          {{ text }}
         </li>
       </ul>
 
@@ -53,7 +50,7 @@ const circleUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1ep
         />
       </div>
 
-      <adventure-begins class="text-neutral" />
+      <adventure-begins-icon class="text-primary" />
     </u-container>
   </section>
 </template>
