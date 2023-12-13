@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    _UButton: typeof import('./src/components/UI/_UButton.vue')['default']
     AdventureBegins: typeof import('./src/components/Icon/AdventureBegins.vue')['default']
     AdventureBeginsIcon: typeof import('./src/components/Icon/AdventureBeginsIcon.vue')['default']
     DoubleHeart: typeof import('./src/components/Icon/DoubleHeart.vue')['default']
@@ -48,9 +49,13 @@ declare module 'vue' {
     MainScheduleModal: typeof import('./src/components/MainApp/MainSchedule/MainScheduleModal.vue')['default']
     ScheduleModal: typeof import('./src/components/Modal/ScheduleModal.vue')['default']
     UButton: typeof import('./src/components/UI/UButton.vue')['default']
+    UButtonTest: typeof import('./src/components/UI/UButtonTest.vue')['default']
     UContainer: typeof import('./src/components/UI/UContainer.vue')['default']
     UDivider: typeof import('./src/components/UI/UDivider.vue')['default']
     UMap: typeof import('./src/components/UI/UMap.vue')['default']
     UTitle: typeof import('./src/components/UI/UTitle.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

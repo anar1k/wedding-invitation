@@ -1,12 +1,11 @@
 <script setup lang="ts">
-interface IProps {
-  round?: boolean,
-  plain?: boolean,
-}
+import type { ButtonProps } from 'element-plus';
 
-withDefaults(defineProps<IProps>(), {
+withDefaults(defineProps<Partial<ButtonProps>>(), {
+  type: 'primary',
   round: false,
-  plain: false,
+  plain: true,
+  disabled: false,
 });
 
 const emit = defineEmits<{
@@ -15,30 +14,15 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <button
-    type="button"
-    class="transition font-medium py-1 px-4"
-    :class="[
-      round ? 'rounded-full' : 'rounded',
-      plain
-        ? 'bg-transparent hover:bg-primary-400 text-primary-600 hover:text-white border border-primary-400'
-        : 'bg-primary-400 hover:bg-primary-600 text-white',
-    ]"
-    @click="emit('click', $event)"
-  >
-    <slot />
-  </button>
-
-<!--  <el-button
-    class="u-button"
+  <el-button
+    :disabled="disabled"
     :round="round"
-    :size="size"
-    plain
-    type="primary"
+    :plain="plain"
+    :type="type"
     @click="emit('click', $event)"
   >
     <slot />
-  </el-button>-->
+  </el-button>
 </template>
 
 <style scoped lang="scss">

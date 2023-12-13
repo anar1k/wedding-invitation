@@ -29,7 +29,6 @@ const dialogVisible = ref<boolean>(false);
 
       <u-button
         round
-        plain
         @click="dialogVisible = true"
       >
         Принять приглашение

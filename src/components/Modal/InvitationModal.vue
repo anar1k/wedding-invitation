@@ -3,6 +3,9 @@ import { computed, reactive, ref } from 'vue';
 import type { FormInstance } from 'element-plus';
 import { CloseBold } from '@element-plus/icons-vue';
 import UButton from '@/components/UI/UButton.vue';
+import { ElMessage } from 'element-plus';
+import 'element-plus/theme-chalk/src/message.scss';
+import axios, { AxiosError } from 'axios';
 
 interface IProps {
   modelValue?: boolean,
@@ -26,9 +29,9 @@ const dialogVisible = computed<boolean>({
   },
 });
 
-/// /////
-
 const formRef = ref<FormInstance>();
+const isLoading = ref<boolean>(false);
+const isSuccess = ref<boolean>(false);
 
 const checkboxes: string[] = [
   'Безалкогольные напитки',
@@ -61,10 +64,9 @@ const dynamicValidateForm = reactive<IForm>({
       value: '',
     },
   ],
-
+  accept: '',
   typeDrink: [],
   anotherDrink: '',
-  accept: '',
 });
 
 const isShowAnotherDrink = computed<boolean>(() => dynamicValidateForm.typeDrink.some((item) => item === 'Другое'));
@@ -87,15 +89,47 @@ const addGuest = (): void => {
 const submitForm = (formEl: FormInstance | undefined): void => {
   if (!formEl) return;
 
-  formEl.validate((valid) => {
-    if (valid) {
-      console.log('submit!');
+  formEl.validate(async (valid) => {
+    if (!valid) return false;
 
-      return true;
+    interface IParams {
+      guests: string,
+      accept: boolean,
+      typeDrink: string,
+      anotherDrink: string
     }
 
-    console.log('error submit!');
-    return false;
+    const params: IParams = {
+      guests: dynamicValidateForm.guests.map((obj) => obj.value).join(', '),
+      accept: dynamicValidateForm.accept === 'Да',
+      typeDrink: dynamicValidateForm.typeDrink.join(', '),
+      anotherDrink: dynamicValidateForm.anotherDrink,
+    };
+
+    try {
+      isLoading.value = true;
+
+      const { data } = await axios.post<string>('/.netlify/functions/sendEmail', params);
+
+      isSuccess.value = true;
+      isLoading.value = false;
+
+      ElMessage({
+        message: data,
+        type: 'success',
+      });
+    } catch (error: unknown) {
+      if (error instanceof AxiosError) {
+        ElMessage({
+          message: error.response?.data || 'Test',
+          type: 'error',
+        });
+      }
+    } finally {
+      isLoading.value = false;
+    }
+
+    return true;
   });
 };
 </script>
@@ -121,6 +155,7 @@ const submitForm = (formEl: FormInstance | undefined): void => {
         ref="formRef"
         :model="dynamicValidateForm"
         status-icon
+        :disabled="isLoading || isSuccess"
         label-position="top"
       >
         <el-form-item
@@ -150,7 +185,8 @@ const submitForm = (formEl: FormInstance | undefined): void => {
 
         <el-form-item>
           <u-button
-            plain
+            type="info"
+            :plain="false"
             @click="addGuest"
           >
             Новый гость
@@ -223,11 +259,13 @@ const submitForm = (formEl: FormInstance | undefined): void => {
 
         <el-form-item class="mt-8 mb-0">
           <u-button
-            class="w-full"
+            :disabled="isSuccess"
+            :loading="isLoading"
+            class="w-full uppercase"
             round
             @click="submitForm(formRef)"
           >
-            Отправить
+            {{ isSuccess ? 'Отправлено' : 'Отправить' }}
           </u-button>
         </el-form-item>
       </el-form>
