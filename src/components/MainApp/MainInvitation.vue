@@ -39,7 +39,7 @@ const buttonProps = computed<IButtonProps>(() => {
   }
 
   return {
-    type: 'warning',
+    type: 'info',
     text: 'Приглашение отклонено',
   };
 });
