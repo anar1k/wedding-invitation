@@ -33,6 +33,7 @@ export default async (event: Request) => {
     });
 
     let text: string = `Приглашение ${ accept ? 'принято' : 'отклонено' }.\nОтправил/и: ${ guests }\n`;
+    const subject: string = text;
 
     if (accept) {
         text += `Будет/ут пить: ${ typeDrink }\n`;
@@ -46,7 +47,7 @@ export default async (event: Request) => {
     const mailOptions = {
         from: myEmail,
         to: myEmail,
-        subject: `Приглашение ${ accept ? 'принято' : 'отклонено' } `,
+        subject: subject,
         text
     };
 
