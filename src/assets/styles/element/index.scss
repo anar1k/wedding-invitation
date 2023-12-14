@@ -6,11 +6,27 @@
   ),
 );
 
-.el-overlay-dialog {
+@use "element-plus/theme-chalk/src/mixins/mixins" as *;
+@use "element-plus/theme-chalk/src/mixins/function" as *;
+@use "element-plus/theme-chalk/src/mixins/config" as *;
+
+@include b(button) {
+  background-color: getCssVar('button', 'bg-color') !important;
+
+  &:hover,
+  &:focus {
+    background-color: getCssVar('button', 'hover', 'bg-color') !important;
+  }
+}
+
+.#{$namespace}-overlay-dialog {
   padding-inline: 10px;
 }
 
-.el-dialog--center .el-dialog__body {
-  padding-top: 10px;
-  padding-bottom: 25px;
+@include b(dialog) {
+  @include m(center) {
+    @include e(body) {
+      padding: 10px calc(#{getCssVar('dialog-padding-primary')} + 5px) 25px;
+    }
+  }
 }

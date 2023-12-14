@@ -32,12 +32,14 @@ export default async (event: Request) => {
         }
     });
 
-    let text: string;
+    let text: string = `Приглашение ${ accept ? 'принято' : 'отклонено' }.\nОтправил/и: ${ guests }\n`;
 
-    if (!accept) {
-        text = `Приглашение ${ accept ? 'принято' : 'отклонено' }.\nОтправил/и: ${ guests }`;
-    } else {
-        text = `Приглашение ${ accept ? 'принято' : 'отклонено' }\nОтправил/и: ${ guests }\nБудет/ут пить: ${ typeDrink }\nДругие напитки: ${ anotherDrink ? anotherDrink : '' }`;
+    if (accept) {
+        text += `Будет/ут пить: ${ typeDrink }\n`;
+    }
+
+    if (anotherDrink) {
+        text += `Другие напитки: ${ anotherDrink ? anotherDrink : '' }`
     }
 
     // Определяем содержимое email

@@ -3,7 +3,6 @@ import UContainer from '@/components/UI/UContainer.vue';
 import UTitle from '@/components/UI/UTitle.vue';
 import InvitationModal from '@/components/Modal/InvitationModal.vue';
 import { ref } from 'vue';
-import UButton from '@/components/UI/UButton.vue';
 
 const texts: string[] = [
   'Пожалуйста, подтвердите участие.',
@@ -27,12 +26,14 @@ const dialogVisible = ref<boolean>(false);
         </li>
       </ul>
 
-      <u-button
+      <el-button
+        type="primary"
+        plain
         round
         @click="dialogVisible = true"
       >
         Принять приглашение
-      </u-button>
+      </el-button>
     </u-container>
 
     <invitation-modal v-model="dialogVisible" />

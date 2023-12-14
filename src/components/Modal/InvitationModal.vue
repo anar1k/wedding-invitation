@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue';
 import type { FormInstance } from 'element-plus';
-import { CloseBold } from '@element-plus/icons-vue';
-import UButton from '@/components/UI/UButton.vue';
+import { CirclePlusFilled, CloseBold, Promotion } from '@element-plus/icons-vue';
 import { ElMessage } from 'element-plus';
 import 'element-plus/theme-chalk/src/message.scss';
 import axios, { AxiosError } from 'axios';
@@ -161,7 +160,7 @@ const submitForm = (formEl: FormInstance | undefined): void => {
         <el-form-item
           v-for="(guest, index) in dynamicValidateForm.guests"
           :key="guest.key"
-          :label="`Гость ${index === 0 ? '' : index}`"
+          :label="`Гость ${ dynamicValidateForm.guests.length === 1 ? '' : index + 1 }`"
           :prop="'guests.' + index + '.value'"
           :rules="{
             required: true,
@@ -184,13 +183,13 @@ const submitForm = (formEl: FormInstance | undefined): void => {
         </el-form-item>
 
         <el-form-item>
-          <u-button
-            type="info"
-            :plain="false"
+          <el-button
+            :icon="CirclePlusFilled"
+            plain
             @click="addGuest"
           >
-            Новый гость
-          </u-button>
+            Добавить гостя
+          </el-button>
         </el-form-item>
 
         <el-divider />
@@ -205,11 +204,9 @@ const submitForm = (formEl: FormInstance | undefined): void => {
           prop="accept"
         >
           <el-radio-group v-model="dynamicValidateForm.accept">
-            <el-radio
+            <el-radio-button
               v-for="label in radios"
               :key="label"
-              class="mr-4"
-              border
               :label="label"
             />
           </el-radio-group>
@@ -258,15 +255,16 @@ const submitForm = (formEl: FormInstance | undefined): void => {
         </template>
 
         <el-form-item class="mt-8 mb-0">
-          <u-button
-            :disabled="isSuccess"
+          <el-button
+            :type="isSuccess ? 'success' : 'primary'"
             :loading="isLoading"
+            :icon="isSuccess ? '' : Promotion"
             class="w-full uppercase"
             round
             @click="submitForm(formRef)"
           >
             {{ isSuccess ? 'Отправлено' : 'Отправить' }}
-          </u-button>
+          </el-button>
         </el-form-item>
       </el-form>
     </template>

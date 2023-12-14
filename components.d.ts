@@ -7,16 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    _UButton: typeof import('./src/components/UI/_UButton.vue')['default']
-    AdventureBegins: typeof import('./src/components/Icon/AdventureBegins.vue')['default']
     AdventureBeginsIcon: typeof import('./src/components/Icon/AdventureBeginsIcon.vue')['default']
-    DoubleHeart: typeof import('./src/components/Icon/DoubleHeart.vue')['default']
     DoubleHeartIcon: typeof import('./src/components/Icon/DoubleHeartIcon.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCalendar: typeof import('element-plus/es')['ElCalendar']
-    ElCard: typeof import('element-plus/es')['ElCard']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElCheckboxGroup: typeof import('element-plus/es')['ElCheckboxGroup']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
@@ -26,8 +22,10 @@ declare module 'vue' {
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElRadio: typeof import('element-plus/es')['ElRadio']
+    ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     FooterApp: typeof import('./src/components/Footer/FooterApp.vue')['default']
     HeaderApp: typeof import('./src/components/Header/HeaderApp.vue')['default']
@@ -39,14 +37,10 @@ declare module 'vue' {
     MainApp: typeof import('./src/components/MainApp/MainApp.vue')['default']
     MainCalendar: typeof import('./src/components/MainApp/MainCalendar.vue')['default']
     MainHero: typeof import('./src/components/MainApp/MainHero.vue')['default']
-    MainHeroBackground: typeof import('./src/components/Background/MainHeroBackground.vue')['default']
     MainInvitation: typeof import('./src/components/MainApp/MainInvitation.vue')['default']
-    MainInvitationModal: typeof import('./src/components/MainApp/MainInvitation/MainInvitationModal.vue')['default']
     MainQuestions: typeof import('./src/components/MainApp/MainQuestions.vue')['default']
     MainSchedule: typeof import('./src/components/MainApp/MainSchedule/MainSchedule.vue')['default']
     MainScheduleItem: typeof import('./src/components/MainApp/MainSchedule/MainScheduleItem.vue')['default']
-    MainScheduleMap: typeof import('./src/components/UI/MainScheduleMap.vue')['default']
-    MainScheduleModal: typeof import('./src/components/MainApp/MainSchedule/MainScheduleModal.vue')['default']
     ScheduleModal: typeof import('./src/components/Modal/ScheduleModal.vue')['default']
     UButton: typeof import('./src/components/UI/UButton.vue')['default']
     UButtonTest: typeof import('./src/components/UI/UButtonTest.vue')['default']
@@ -54,8 +48,5 @@ declare module 'vue' {
     UDivider: typeof import('./src/components/UI/UDivider.vue')['default']
     UMap: typeof import('./src/components/UI/UMap.vue')['default']
     UTitle: typeof import('./src/components/UI/UTitle.vue')['default']
-  }
-  export interface ComponentCustomProperties {
-    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
