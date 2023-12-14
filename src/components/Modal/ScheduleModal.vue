@@ -52,7 +52,7 @@ const dialogVisible = computed<boolean>({
       v-if="selectedSchedule?.address"
       #default
     >
-      <p class="text-neutral text-base pb-3 text-center">
+      <p class="text-neutral-500 text-base pb-3 text-center">
         {{ selectedSchedule.address?.text }}
       </p>
 

@@ -27,38 +27,38 @@ const collapseItems: ICollapseItem[] = [
     title: 'Какие подарки предпочтительны?',
     text: 'Мы составили wish-лист подарков, которые были бы нам особенно приятны или полезны. Но мы будем рады и сюрпризам, а также поздравлениям в конвертах.',
   },
-
-  {
-    title: 'Возможно ли приехать на своем автомобиле?',
-    text: 'Да, на территории отеля имеется парковка. Для бронирования места просим заранее сообщить марку и номер автомобиля.',
-  },
 ];
 </script>
 
 <template>
-  <section>
+  <section id="questions">
     <u-container>
       <u-title class="text-center">
         Вопросы и ответы
       </u-title>
 
-      <ul v-if="collapseItems.length">
-        <li
+      <el-collapse>
+        <el-collapse-item
           v-for="(item, index) in collapseItems"
           :key="index"
-          class="mb-8 last:mb-0"
         >
-          <h3 class="text-xl md:text-2xl mb-3 md:mb-4 text-primary-400 font-medium">
-            {{ item.title }}
-          </h3>
+          <template #title>
+            <span class="text-left text-lg md:text-xl text-neutral-500">{{ item.title }}</span>
+          </template>
 
-          <p class="text-base md:text-lg text-neutral">
-            {{ item.text }}
-          </p>
-
-          <el-divider />
-        </li>
-      </ul>
+          <template #default>
+            <p class="text-base md:text-lg font-light text-neutral-500">
+              {{ item.text }}
+            </p>
+          </template>
+        </el-collapse-item>
+      </el-collapse>
     </u-container>
   </section>
 </template>
+
+<style scoped lang="scss">
+:deep(.el-collapse-item__header) {
+  @apply py-4 h-auto;
+}
+</style>

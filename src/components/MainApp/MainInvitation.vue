@@ -50,7 +50,7 @@ const buttonProps = computed<IButtonProps>(() => {
     <u-container class="text-center">
       <u-title>Приглашение</u-title>
 
-      <ul class="text-lg font-light flex flex-col gap-y-3 mb-4">
+      <ul class="text-lg text-neutral-600 font-light flex flex-col gap-y-3 mb-4">
         <li
           v-for="(text, index) in texts"
           :key="index"

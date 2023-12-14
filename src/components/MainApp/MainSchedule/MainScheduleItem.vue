@@ -39,10 +39,7 @@ const handleButton = (): void => {
         {{ schedule.title }}
       </h4>
 
-      <p
-        v-if="!!schedule.description"
-        class="text-neutral-500"
-      >
+      <p v-if="!!schedule.description">
         {{ schedule.description }}
       </p>
 
