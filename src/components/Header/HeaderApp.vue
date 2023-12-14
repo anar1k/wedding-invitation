@@ -21,16 +21,18 @@ onBeforeUnmount(() => {
 
 <template>
   <header
-    class="py-4 md:py-8 fixed top-0 inset-x-0 z-50 transition duration-300 text-white md:rounded-b-3xl"
-    :class="isScrolled ? 'shadow bg-white/95 !text-neutral' : ''"
+    class="py-4 md:py-8 fixed top-0 inset-x-0 z-50 transition duration-300 md:rounded-b-3xl"
+    :class="isScrolled ? 'md:shadow md:bg-white/95' : ''"
   >
     <u-container>
-      <header-nav class="hidden md:flex items-center justify-center gap-x-6" />
-
-      <header-mobile-nav
-        class="md:hidden"
-        :is-scrolled="isScrolled"
+      <header-nav
+        class="text-white hidden md:flex items-center justify-center gap-x-6"
+        :class="{
+          '!text-neutral': isScrolled,
+        }"
       />
+
+      <header-mobile-nav class="md:hidden" />
     </u-container>
   </header>
 </template>

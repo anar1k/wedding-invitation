@@ -1,8 +1,13 @@
 <script setup lang="ts">
+
 interface ILink {
   name: string,
   link: `#${string}`,
 }
+
+const emit = defineEmits<{
+  click: [event: Event]
+}>();
 
 const links: ILink[] = [
   {
@@ -31,6 +36,7 @@ const links: ILink[] = [
       :key="item.name + index"
       :href="item.link"
       class="hover:underline text-current font-serif text-sm uppercase"
+      @click="emit('click', $event)"
     >
       {{ item.name }}
     </a>

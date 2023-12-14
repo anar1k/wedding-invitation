@@ -2,14 +2,6 @@
 import { ref } from 'vue';
 import HeaderNav from '@/components/Header/HeaderNav.vue';
 
-interface IProps {
-  isScrolled?: boolean
-}
-
-withDefaults(defineProps<IProps>(), {
-  isScrolled: false,
-});
-
 const drawer = ref<boolean>(false);
 
 const openDrawer = (): void => {
@@ -18,27 +10,16 @@ const openDrawer = (): void => {
 </script>
 
 <template>
-  <div class="flex items-center justify-between">
-    <a
-      href="#"
-      aria-label="home"
-    >
-      <svg
-        v-show="isScrolled"
-        width="24"
-        height="24"
-      >
-        <use href="/images/icons.svg#heart" />
-      </svg>
-    </a>
-
+  <div class="flex items-center justify-end">
     <div
+      class="bg-white rounded-xl p-2 shadow"
       @click="openDrawer"
       @keydown="openDrawer"
     >
       <svg
         width="24"
         height="24"
+        class="text-primary"
       >
         <use href="/images/icons.svg#burger" />
       </svg>
@@ -49,7 +30,10 @@ const openDrawer = (): void => {
       :with-header="false"
       size="auto"
     >
-      <header-nav class="flex flex-col items-end gap-y-4 px-4 text-primary" />
+      <header-nav
+        class="flex flex-col items-end gap-y-4 px-4 text-neutral"
+        @click="drawer = false"
+      />
     </el-drawer>
   </div>
 </template>

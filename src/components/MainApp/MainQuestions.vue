@@ -37,7 +37,7 @@ const collapseItems: ICollapseItem[] = [
         Вопросы и ответы
       </u-title>
 
-      <el-collapse>
+      <el-collapse accordion>
         <el-collapse-item
           v-for="(item, index) in collapseItems"
           :key="index"
