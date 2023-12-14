@@ -17,6 +17,7 @@
     "axios": "^1.6.2",
     "element-plus": "^2.4.3",
     "nodemailer": "^6.9.7",
+    "pinia": "^2.1.7",
     "vue": "^3.3.4",
     "vue-yandex-maps": "^2.0.0-rc.5"
   },

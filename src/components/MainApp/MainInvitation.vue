@@ -2,7 +2,10 @@
 import UContainer from '@/components/UI/UContainer.vue';
 import UTitle from '@/components/UI/UTitle.vue';
 import InvitationModal from '@/components/Modal/InvitationModal.vue';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useInvitationStore } from '@/stores/invitation';
+import { storeToRefs } from 'pinia';
+import type { ButtonType } from 'element-plus';
 
 const texts: string[] = [
   'Пожалуйста, подтвердите участие.',
@@ -10,6 +13,36 @@ const texts: string[] = [
 ];
 
 const dialogVisible = ref<boolean>(false);
+
+const invitationStore = useInvitationStore();
+
+const { isSuccess, isAccept } = storeToRefs(invitationStore);
+
+interface IButtonProps {
+  type: ButtonType,
+  text: string,
+}
+
+const buttonProps = computed<IButtonProps>(() => {
+  if (!isSuccess.value) {
+    return {
+      type: 'primary',
+      text: 'Принять приглашение',
+    };
+  }
+
+  if (isAccept.value) {
+    return {
+      type: 'success',
+      text: 'Приглашение принято',
+    };
+  }
+
+  return {
+    type: 'warning',
+    text: 'Приглашение отклонено',
+  };
+});
 </script>
 
 <template>
@@ -27,12 +60,12 @@ const dialogVisible = ref<boolean>(false);
       </ul>
 
       <el-button
-        type="primary"
+        :type="buttonProps.type"
         plain
         round
         @click="dialogVisible = true"
       >
-        Принять приглашение
+        {{ buttonProps.text }}
       </el-button>
     </u-container>
 

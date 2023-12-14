@@ -4,7 +4,9 @@ import type { FormInstance } from 'element-plus';
 import { CirclePlusFilled, CloseBold, Promotion } from '@element-plus/icons-vue';
 import { ElMessage } from 'element-plus';
 import 'element-plus/theme-chalk/src/message.scss';
-import axios, { AxiosError } from 'axios';
+import type { IInvitationParams } from '@/types/Invitation';
+import { useInvitationStore } from '@/stores/invitation';
+import { storeToRefs } from 'pinia';
 
 interface IProps {
   modelValue?: boolean,
@@ -28,9 +30,12 @@ const dialogVisible = computed<boolean>({
   },
 });
 
+const invitationStore = useInvitationStore();
+
+const { isSuccess } = storeToRefs(invitationStore);
+
 const formRef = ref<FormInstance>();
 const isLoading = ref<boolean>(false);
-const isSuccess = ref<boolean>(false);
 
 const checkboxes: string[] = [
   'Безалкогольные напитки',
@@ -91,14 +96,7 @@ const submitForm = (formEl: FormInstance | undefined): void => {
   formEl.validate(async (valid) => {
     if (!valid) return false;
 
-    interface IParams {
-      guests: string,
-      accept: boolean,
-      typeDrink: string,
-      anotherDrink: string
-    }
-
-    const params: IParams = {
+    const params: IInvitationParams = {
       guests: dynamicValidateForm.guests.map((obj) => obj.value).join(', '),
       accept: dynamicValidateForm.accept === 'Да',
       typeDrink: dynamicValidateForm.typeDrink.join(', '),
@@ -108,9 +106,8 @@ const submitForm = (formEl: FormInstance | undefined): void => {
     try {
       isLoading.value = true;
 
-      const { data } = await axios.post<string>('/.netlify/functions/sendEmail', params);
+      const data: string = await invitationStore.fetchEmail(params);
 
-      isSuccess.value = true;
       isLoading.value = false;
 
       ElMessage({
@@ -118,9 +115,9 @@ const submitForm = (formEl: FormInstance | undefined): void => {
         type: 'success',
       });
     } catch (error: unknown) {
-      if (error instanceof AxiosError) {
+      if (typeof error === 'string') {
         ElMessage({
-          message: error.response?.data || 'Test',
+          message: error,
           type: 'error',
         });
       }
