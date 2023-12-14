@@ -27,11 +27,12 @@ const openDrawer = (): void => {
 
     <el-drawer
       v-model="drawer"
+      direction="ttb"
       :with-header="false"
       size="auto"
     >
       <header-nav
-        class="flex flex-col items-end gap-y-4 px-4 text-neutral"
+        class="flex flex-col items-center gap-y-4 px-4 text-neutral"
         @click="drawer = false"
       />
     </el-drawer>
