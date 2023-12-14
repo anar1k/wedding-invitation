@@ -1,13 +1,13 @@
 const nodemailer = require('nodemailer');
 
-interface IBody {
-    guests: string,
-    accept: boolean,
-    typeDrink: string,
-    anotherDrink: string
-}
-
 export default async (event: Request) => {
+    interface IBody {
+        guests: string,
+        accept: boolean,
+        typeDrink: string,
+        anotherDrink: string
+    }
+
     const body: IBody = await event.json();
 
     if (!body) {
