@@ -77,8 +77,6 @@ function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[
         <main-schedule-item
           v-for="(item, index) in schedules"
           :key="index"
-          data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom"
           :schedule="item"
           @click="handleClick"
         />

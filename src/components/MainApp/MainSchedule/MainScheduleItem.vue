@@ -16,11 +16,20 @@ const handleButton = (): void => {
 
 <template>
   <li class="group flex gap-4 md:gap-10 pb-3 last:pb-0">
-    <h4 class="text-xl md:text-2xl text-primary">
+    <h4
+      class="text-xl md:text-2xl text-primary"
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+    >
       {{ schedule.time }}
     </h4>
 
-    <div class="flex flex-col items-center gap-y-2">
+    <div
+      class="flex flex-col items-center gap-y-2"
+      data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-delay="500"
+    >
       <svg class="w-6 h-6">
         <use
           href="/images/icons.svg#heart"
@@ -34,7 +43,11 @@ const handleButton = (): void => {
       />
     </div>
 
-    <div class="pb-4 md:pb-8 md:group-last:pb-0 space-y-2 md:space-y-4">
+    <div
+      class="pb-4 md:pb-8 md:group-last:pb-0 space-y-2 md:space-y-4"
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+    >
       <h4 class="text-xl md:text-2xl text-primary">
         {{ schedule.title }}
       </h4>

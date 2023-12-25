@@ -55,14 +55,12 @@ const buttonProps = computed<IButtonProps>(() => {
         Приглашение
       </u-title>
 
-      <ul
-        class="text-lg font-light flex flex-col gap-y-3 mb-4"
-        data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom"
-      >
+      <ul class="text-lg font-light flex flex-col gap-y-3 mb-4">
         <li
           v-for="(text, index) in texts"
           :key="index"
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
         >
           {{ text }}
         </li>

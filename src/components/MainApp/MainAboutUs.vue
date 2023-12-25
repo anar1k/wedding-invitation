@@ -34,27 +34,32 @@ const texts: string[] = [
         </li>
       </ul>
 
-      <div
-        class="flex justify-center items-center gap-x-6 md:gap-x-12 mb-12 md:mb-16"
-        data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom"
-      >
+      <div class="flex justify-center items-center gap-x-6 md:gap-x-12 mb-12 md:mb-16">
         <el-avatar
           class="about-us__avatar"
           :src="circleUrl"
+          data-aos="zoom-in"
+          data-aos-anchor-placement="bottom-bottom"
         />
 
-        <svg
-          width="24"
-          height="24"
-          class="text-primary -scale-x-100"
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
         >
-          <use href="/images/icons.svg#heart" />
-        </svg>
+          <svg
+            width="24"
+            height="24"
+            class="text-primary -scale-x-100"
+          >
+            <use href="/images/icons.svg#heart" />
+          </svg>
+        </div>
 
         <el-avatar
           class="about-us__avatar"
           :src="circleUrl"
+          data-aos="zoom-in"
+          data-aos-anchor-placement="bottom-bottom"
         />
       </div>
 
