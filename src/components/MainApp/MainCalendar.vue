@@ -12,7 +12,7 @@ interface TDataCell {
 }
 
 const getClassForCell = (data: TDataCell): string => {
-  if (data.day.split('-').slice(1)[1] === '20') return 'text-primary-400 font-medium md:text-xl';
+  if (data.day.split('-').slice(1)[1] === '20') return 'text-primary font-medium md:text-xl';
 
   if (data.type !== 'current-month') return 'opacity-25';
 
@@ -32,7 +32,7 @@ const getClassForCell = (data: TDataCell): string => {
         :range="[new Date(2024, 3, 8), new Date(2024, 4, 3)]"
       >
         <template #header>
-          <div class="font-medium text-primary-400 font-caveat text-2xl/none">
+          <div class="font-medium text-primary font-caveat text-2xl/none">
             Апрель
           </div>
 
@@ -79,7 +79,7 @@ const getClassForCell = (data: TDataCell): string => {
 }
 
 :deep(.el-statistic__content) {
-  @apply text-primary-400
+  @apply text-primary
 }
 
 [data-aos^=zoom][data-aos^=zoom].aos-animate {

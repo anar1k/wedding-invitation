@@ -17,7 +17,7 @@ const handleButton = (): void => {
 <template>
   <li class="group flex gap-4 md:gap-10 pb-3 last:pb-0">
     <h4
-      class="text-xl md:text-2xl text-primary-400"
+      class="text-xl md:text-2xl text-primary"
       data-aos="fade-up"
       data-aos-anchor-placement="bottom-bottom"
     >
@@ -33,7 +33,7 @@ const handleButton = (): void => {
       <svg class="w-6 h-6">
         <use
           href="/images/icons.svg#heart"
-          class="w-6 h-6 text-primary"
+          class="w-6 h-6 text-primary-300"
         />
       </svg>
 
@@ -48,7 +48,7 @@ const handleButton = (): void => {
       data-aos="fade-up"
       data-aos-anchor-placement="bottom-bottom"
     >
-      <h4 class="text-xl md:text-2xl text-primary-400">
+      <h4 class="text-xl md:text-2xl text-primary">
         {{ schedule.title }}
       </h4>
 
@@ -81,6 +81,6 @@ const handleButton = (): void => {
 
 <style scoped lang="scss">
 :deep(.el-divider) {
-  --el-border-color: theme('colors.primary.DEFAULT')
+  --el-border-color: theme('colors.primary.300')
 }
 </style>

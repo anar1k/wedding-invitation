@@ -48,7 +48,7 @@ const buttonProps = computed<IButtonProps>(() => {
 <template>
   <section
     id="invitation"
-    class="bg-primary py-8"
+    class="bg-primary-300 py-8"
   >
     <u-container class="text-center text-white">
       <u-title class="!text-white">

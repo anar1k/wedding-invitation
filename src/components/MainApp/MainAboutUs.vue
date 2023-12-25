@@ -45,11 +45,12 @@ const texts: string[] = [
         <div
           data-aos="fade-up"
           data-aos-anchor-placement="bottom-bottom"
+          data-aos-delay="500"
         >
           <svg
             width="24"
             height="24"
-            class="text-primary -scale-x-100"
+            class="text-primary-300 -scale-x-100"
           >
             <use href="/images/icons.svg#heart" />
           </svg>
@@ -67,7 +68,7 @@ const texts: string[] = [
         data-aos="fade-up"
         data-aos-anchor-placement="bottom-bottom"
       >
-        <adventure-begins-icon class="text-primary" />
+        <adventure-begins-icon class="text-primary-300" />
       </div>
     </u-container>
   </section>

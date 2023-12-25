@@ -139,7 +139,7 @@ const submitForm = (formEl: FormInstance | undefined): void => {
     class="schedule-modal max-w-[500px] !rounded-2xl"
   >
     <template #header>
-      <div class="text-primary-400 font-medium">
+      <div class="text-primary font-medium">
         <h3 class="text-xl">
           Подтверждение присутствия
         </h3>
