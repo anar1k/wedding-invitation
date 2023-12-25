@@ -20,7 +20,7 @@ module.exports = {
 
       colors: {
         primary: {
-          DEFAULT: '#fb7185',
+          DEFAULT: '#fda4af',
           ...colors.rose
         },
 

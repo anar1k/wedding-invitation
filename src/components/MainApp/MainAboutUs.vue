@@ -58,7 +58,12 @@ const texts: string[] = [
         />
       </div>
 
-      <adventure-begins-icon class="text-primary" />
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="bottom-bottom"
+      >
+        <adventure-begins-icon class="text-primary" />
+      </div>
     </u-container>
   </section>
 </template>

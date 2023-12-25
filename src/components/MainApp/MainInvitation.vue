@@ -63,16 +63,19 @@ const buttonProps = computed<IButtonProps>(() => {
         </li>
       </ul>
 
-      <el-button
-        :type="buttonProps.type"
+      <div
         data-aos="fade-up"
         data-aos-anchor-placement="bottom-bottom"
-        plain
-        round
-        @click="dialogVisible = true"
       >
-        {{ buttonProps.text }}
-      </el-button>
+        <el-button
+          :type="buttonProps.type"
+          plain
+          round
+          @click="dialogVisible = true"
+        >
+          {{ buttonProps.text }}
+        </el-button>
+      </div>
     </u-container>
 
     <invitation-modal v-model="dialogVisible" />

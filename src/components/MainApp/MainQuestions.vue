@@ -4,7 +4,11 @@ import UTitle from '@/components/UI/UTitle.vue';
 
 interface ICollapseItem {
   title: string,
-  text: string
+  text: string,
+  link?: {
+    text: string,
+    href: string
+  }
 }
 
 const collapseItems: ICollapseItem[] = [
@@ -26,6 +30,14 @@ const collapseItems: ICollapseItem[] = [
   {
     title: 'Какие подарки предпочтительны?',
     text: 'Мы составили wish-лист подарков, которые были бы нам особенно приятны или полезны. Но мы будем рады и сюрпризам, а также поздравлениям в конвертах.',
+  },
+  {
+    title: 'Кому можно задать вопросы по организации мероприятия?',
+    text: 'Наш свадебный организатор — Анна с радостью ответит на ваши вопросы. Ее номер телефона:',
+    link: {
+      href: 'tel:+79062657287',
+      text: '+7 (906) 265-72-87',
+    },
   },
 ];
 </script>
@@ -53,6 +65,13 @@ const collapseItems: ICollapseItem[] = [
             <template #default>
               <p class="text-base md:text-lg font-light text-neutral-500">
                 {{ item.text }}
+
+                <el-link
+                  v-if="item.link"
+                  :href="item.link.href"
+                >
+                  {{ item.link.text }}
+                </el-link>
               </p>
             </template>
           </el-collapse-item>
@@ -63,6 +82,10 @@ const collapseItems: ICollapseItem[] = [
 </template>
 
 <style scoped lang="scss">
+:deep(.el-link) {
+  @apply align-baseline;
+}
+
 :deep(.el-collapse) {
   @apply border-b-0;
 }
