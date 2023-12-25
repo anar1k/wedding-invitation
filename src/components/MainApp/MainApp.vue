@@ -14,11 +14,7 @@ import MainHero from './MainHero.vue';
 
     <main-calendar class="-mt-12" />
 
-    <u-divider />
-
-    <main-invitation />
-
-    <u-divider />
+    <main-invitation class="my-16" />
 
     <main-about-us />
 
