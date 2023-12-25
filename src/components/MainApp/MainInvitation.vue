@@ -53,7 +53,7 @@ const buttonProps = computed<IButtonProps>(() => {
       <ul
         class="text-lg text-neutral-600 font-light flex flex-col gap-y-3 mb-4"
         data-aos="fade-up"
-        data-aos-anchor-placement="top-center"
+        data-aos-anchor-placement="bottom-bottom"
       >
         <li
           v-for="(text, index) in texts"
@@ -66,7 +66,7 @@ const buttonProps = computed<IButtonProps>(() => {
       <el-button
         :type="buttonProps.type"
         data-aos="fade-up"
-        data-aos-anchor-placement="top-center"
+        data-aos-anchor-placement="bottom-bottom"
         plain
         round
         @click="dialogVisible = true"

@@ -24,7 +24,7 @@ const texts: string[] = [
       <ul
         class="text-lg font-light flex flex-col gap-y-3 mb-8"
         data-aos="fade-up"
-        data-aos-anchor-placement="top-center"
+        data-aos-anchor-placement="bottom-bottom"
       >
         <li
           v-for="(text, index) in texts"
@@ -37,7 +37,7 @@ const texts: string[] = [
       <div
         class="flex justify-center items-center gap-x-6 md:gap-x-12 mb-12 md:mb-16"
         data-aos="fade-up"
-        data-aos-anchor-placement="top-center"
+        data-aos-anchor-placement="bottom-bottom"
       >
         <el-avatar
           class="about-us__avatar"

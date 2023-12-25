@@ -68,7 +68,7 @@ function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[
       <h3
         class="text-center text-xl md:text-2xl pb-8 md:pb-14"
         data-aos="fade-up"
-        data-aos-anchor-placement="top-center"
+        data-aos-anchor-placement="bottom-bottom"
       >
         20 апреля 2024 г.
       </h3>
@@ -78,7 +78,7 @@ function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[
           v-for="(item, index) in schedules"
           :key="index"
           data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
+          data-aos-anchor-placement="bottom-bottom"
           :schedule="item"
           @click="handleClick"
         />

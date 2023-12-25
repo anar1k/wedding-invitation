@@ -42,7 +42,7 @@ const collapseItems: ICollapseItem[] = [
           v-for="(item, index) in collapseItems"
           :key="index"
           data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
+          data-aos-anchor-placement="bottom-bottom"
           class="group"
         >
           <el-collapse-item>
