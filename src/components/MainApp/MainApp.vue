@@ -12,11 +12,9 @@ import MainHero from './MainHero.vue';
   <main class="pb-24">
     <main-hero />
 
-    <main-calendar class="-mt-12" />
-
-    <u-divider />
-
     <main-invitation />
+
+    <main-calendar class="-mt-12" />
 
     <u-divider />
 
