@@ -52,6 +52,7 @@ const getClassForCell = (data: TDataCell): string => {
             <img
               v-if="data.day.split('-').slice(1)[1] === '20'"
               data-aos="zoom-in"
+              data-aos-anchor-placement="top-center"
               loading="lazy"
               src="/images/heart.webp"
               alt=""

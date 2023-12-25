@@ -37,28 +37,37 @@ const collapseItems: ICollapseItem[] = [
         Вопросы и ответы
       </u-title>
 
-      <el-collapse accordion>
-        <el-collapse-item
+      <div>
+        <el-collapse
           v-for="(item, index) in collapseItems"
           :key="index"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          class="group"
         >
-          <template #title>
-            <span class="text-left text-lg md:text-xl text-neutral-500">{{ item.title }}</span>
-          </template>
+          <el-collapse-item>
+            <template #title>
+              <span class="text-left text-lg md:text-xl text-neutral-500">{{ item.title }}</span>
+            </template>
 
-          <template #default>
-            <p class="text-base md:text-lg font-light text-neutral-500">
-              {{ item.text }}
-            </p>
-          </template>
-        </el-collapse-item>
-      </el-collapse>
+            <template #default>
+              <p class="text-base md:text-lg font-light text-neutral-500">
+                {{ item.text }}
+              </p>
+            </template>
+          </el-collapse-item>
+        </el-collapse>
+      </div>
     </u-container>
   </section>
 </template>
 
 <style scoped lang="scss">
+:deep(.el-collapse) {
+  @apply border-b-0;
+}
+
 :deep(.el-collapse-item__header) {
-  @apply py-4 h-auto;
+  @apply py-4 h-auto border-b-0 group-last:border-b;
 }
 </style>

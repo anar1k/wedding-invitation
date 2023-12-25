@@ -50,7 +50,11 @@ const buttonProps = computed<IButtonProps>(() => {
     <u-container class="text-center">
       <u-title>Приглашение</u-title>
 
-      <ul class="text-lg text-neutral-600 font-light flex flex-col gap-y-3 mb-4">
+      <ul
+        class="text-lg text-neutral-600 font-light flex flex-col gap-y-3 mb-4"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+      >
         <li
           v-for="(text, index) in texts"
           :key="index"
@@ -61,6 +65,8 @@ const buttonProps = computed<IButtonProps>(() => {
 
       <el-button
         :type="buttonProps.type"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
         plain
         round
         @click="dialogVisible = true"

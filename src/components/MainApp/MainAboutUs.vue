@@ -21,7 +21,11 @@ const texts: string[] = [
     <u-container class="flex flex-col items-center text-center">
       <u-title>Карина & Анар</u-title>
 
-      <ul class="text-lg font-light flex flex-col gap-y-3 mb-8">
+      <ul
+        class="text-lg font-light flex flex-col gap-y-3 mb-8"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+      >
         <li
           v-for="(text, index) in texts"
           :key="index"
@@ -30,7 +34,11 @@ const texts: string[] = [
         </li>
       </ul>
 
-      <div class="flex justify-center items-center gap-x-6 md:gap-x-12 mb-12 md:mb-16">
+      <div
+        class="flex justify-center items-center gap-x-6 md:gap-x-12 mb-12 md:mb-16"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+      >
         <el-avatar
           class="about-us__avatar"
           :src="circleUrl"

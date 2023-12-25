@@ -8,8 +8,9 @@ import AOS from 'aos';
 
 onMounted(() => {
   AOS.init({
-    anchorPlacement: 'center-bottom',
+    duration: 1000,
     once: true,
+    anchorPlacement: 'top-center',
   });
 });
 </script>

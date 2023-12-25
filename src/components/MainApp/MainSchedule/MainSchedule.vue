@@ -4,6 +4,8 @@ import UTitle from '@/components/UI/UTitle.vue';
 import MainScheduleItem from '@/components/MainApp/MainSchedule/MainScheduleItem.vue';
 import ScheduleModal from '@/components/Modal/ScheduleModal.vue';
 import type { ISchedule } from '@/types/Schedule';
+import { vIntersectionObserver } from '@vueuse/components';
+import { initYmaps } from 'vue-yandex-maps';
 import { ref } from 'vue';
 
 const schedules: ISchedule[] = [
@@ -43,16 +45,31 @@ const handleClick = (schedule: ISchedule): void => {
     selectedSchedule.value = schedule;
   }
 };
+
+const isVisible = ref<boolean>(false);
+function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[]) {
+  if (isVisible.value || !isIntersecting) return;
+
+  isVisible.value = true;
+  initYmaps();
+}
 </script>
 
 <template>
-  <section id="schedule">
+  <section
+    id="schedule"
+    v-intersection-observer="onIntersectionObserver"
+  >
     <u-container>
       <u-title class="text-center">
         Программа дня
       </u-title>
 
-      <h3 class="text-center text-xl md:text-2xl pb-8 md:pb-14">
+      <h3
+        class="text-center text-xl md:text-2xl pb-8 md:pb-14"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+      >
         20 апреля 2024 г.
       </h3>
 
@@ -60,6 +77,8 @@ const handleClick = (schedule: ISchedule): void => {
         <main-schedule-item
           v-for="(item, index) in schedules"
           :key="index"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
           :schedule="item"
           @click="handleClick"
         />
