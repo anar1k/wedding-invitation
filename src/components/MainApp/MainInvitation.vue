@@ -51,11 +51,11 @@ const buttonProps = computed<IButtonProps>(() => {
     class="bg-primary py-8"
   >
     <u-container class="text-center text-white">
-      <u-title class="text-white">
+      <u-title class="!text-white">
         Приглашение
       </u-title>
 
-      <ul class="text-lg font-light flex flex-col gap-y-3 mb-4">
+      <ul class="text-lg flex flex-col gap-y-3 mb-4">
         <li
           v-for="(text, index) in texts"
           :key="index"
@@ -71,6 +71,7 @@ const buttonProps = computed<IButtonProps>(() => {
         data-aos-anchor-placement="bottom-bottom"
       >
         <el-button
+          size="large"
           :type="buttonProps.type"
           plain
           round

@@ -19,7 +19,7 @@ const openDrawer = (): void => {
       <svg
         width="24"
         height="24"
-        class="text-primary"
+        class="text-primary-400"
       >
         <use href="/images/icons.svg#burger" />
       </svg>

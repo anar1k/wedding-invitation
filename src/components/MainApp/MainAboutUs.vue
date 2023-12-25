@@ -22,7 +22,7 @@ const texts: string[] = [
       <u-title>Карина & Анар</u-title>
 
       <ul
-        class="text-lg font-light flex flex-col gap-y-3 mb-8"
+        class="text-lg flex flex-col gap-y-3 mb-8"
         data-aos="fade-up"
         data-aos-anchor-placement="bottom-bottom"
       >

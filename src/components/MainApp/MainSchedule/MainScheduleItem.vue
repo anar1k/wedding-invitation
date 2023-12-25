@@ -17,7 +17,7 @@ const handleButton = (): void => {
 <template>
   <li class="group flex gap-4 md:gap-10 pb-3 last:pb-0">
     <h4
-      class="text-xl md:text-2xl text-primary"
+      class="text-xl md:text-2xl text-primary-400"
       data-aos="fade-up"
       data-aos-anchor-placement="bottom-bottom"
     >
@@ -48,7 +48,7 @@ const handleButton = (): void => {
       data-aos="fade-up"
       data-aos-anchor-placement="bottom-bottom"
     >
-      <h4 class="text-xl md:text-2xl text-primary">
+      <h4 class="text-xl md:text-2xl text-primary-400">
         {{ schedule.title }}
       </h4>
 

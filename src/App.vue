@@ -23,7 +23,7 @@ onMounted(() => {
     <footer-app />
 
     <el-backtop
-      class="!text-primary"
+      class="!text-primary-400"
       :right="30"
       :bottom="30"
     />

@@ -13,11 +13,6 @@ interface ICollapseItem {
 
 const collapseItems: ICollapseItem[] = [
   {
-    title: 'Есть ли у нас свадебный хештег?',
-    text: 'Да, при публикациях в социальных сетях, используйте этот тег #wedinvent',
-  },
-
-  {
     title: 'Будет ли дресс-код?',
     text: 'Мы будем рады, если девушки выберут вечерние или коктейльные платья в пастельных тонах, а мужчины — костюм.',
   },
@@ -63,7 +58,7 @@ const collapseItems: ICollapseItem[] = [
             </template>
 
             <template #default>
-              <p class="text-base md:text-lg font-light text-neutral-500">
+              <p class="text-base md:text-lg text-neutral-500">
                 {{ item.text }}
 
                 <el-link
