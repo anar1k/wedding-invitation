@@ -4,6 +4,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+// @ts-ignore: Unreachable code error
 import eslint from 'vite-plugin-eslint';
 
 // https://vitejs.dev/config/

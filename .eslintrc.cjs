@@ -1,12 +1,16 @@
-/* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
 
+  plugins: [
+    '@stylistic'
+  ],
+
   extends: [
     'plugin:vue/vue3-recommended',
-    '@vue/eslint-config-airbnb-with-typescript'
+    'eslint:recommended',
+    '@vue/eslint-config-typescript'
   ],
 
   parserOptions: {
@@ -14,11 +18,36 @@ module.exports = {
   },
 
   rules: {
-    'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'vue/max-attributes-per-line': ['error', {
-      singleline: { max: 1 },
-      multiline: { max: 1 }
-    }]
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+
+    'vue/max-len': ['error', {
+      code: 120,
+      ignoreUrls: true,
+      ignoreComments: true,
+      ignoreRegExpLiterals: true,
+      ignoreTemplateLiterals: true,
+      ignoreStrings: true,
+      ignoreHTMLAttributeValues: true
+    }],
+
+    'no-unused-vars': ['error', {
+      'vars': 'all',
+      'args': 'after-used',
+      'caughtErrors': 'none',
+      'ignoreRestSiblings': false
+    }],
+
+    '@stylistic/quotes': ['error', 'single'],
+    '@stylistic/comma-spacing': ['error', { 'before': false, 'after': true }],
+    '@stylistic/comma-style': ['error', 'last'],
+    '@stylistic/no-multiple-empty-lines': ['error', { max: 2, maxBOF: 2, maxEOF: 0 }],
+    '@stylistic/semi': 'error',
+    '@stylistic/object-curly-spacing': ['error', 'always'],
+    '@stylistic/indent': ['error', 2]
   },
 };
