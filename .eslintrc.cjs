@@ -43,6 +43,13 @@ module.exports = {
     }],
 
     '@stylistic/quotes': ['error', 'single'],
+    '@stylistic/operator-linebreak': ['error', 'before'],
+    '@stylistic/no-multi-spaces': 'error',
+    '@stylistic/type-generic-spacing': ['error'],
+    '@stylistic/type-named-tuple-spacing': ['error'],
+    '@stylistic/space-infix-ops': 'error',
+    '@stylistic/type-annotation-spacing': ['error', { 'before': false, 'after': true }],
+    '@stylistic/key-spacing': ['error', { 'afterColon': true }],
     '@stylistic/comma-spacing': ['error', { 'before': false, 'after': true }],
     '@stylistic/comma-style': ['error', 'last'],
     '@stylistic/no-multiple-empty-lines': ['error', { max: 2, maxBOF: 2, maxEOF: 0 }],

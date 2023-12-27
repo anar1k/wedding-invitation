@@ -38,7 +38,7 @@ const collapseItems: ICollapseItem[] = [
 </script>
 
 <template>
-  <section id="questions">
+  <section>
     <u-container>
       <u-title class="text-center">
         Вопросы и ответы

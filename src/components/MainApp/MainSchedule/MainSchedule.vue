@@ -56,10 +56,7 @@ function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[
 </script>
 
 <template>
-  <section
-    id="schedule"
-    v-intersection-observer="onIntersectionObserver"
-  >
+  <section v-intersection-observer="onIntersectionObserver">
     <u-container>
       <u-title class="text-center">
         Программа дня
