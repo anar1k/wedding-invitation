@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
-type TPathForImage = `/images/hero/bg-hero-${string}.webp`;
+type TPathForImage = `/images/${string}.webp`;
 
 const backgroundImages: TPathForImage[] = [
-  '/images/hero/bg-hero-1.webp',
-  '/images/hero/bg-hero-2.webp',
-  '/images/hero/bg-hero-3.webp',
+  '/images/hero-1.webp',
+  '/images/hero-2.webp',
+  '/images/hero-3.webp',
+  '/images/hero-4.webp',
+  '/images/hero-5.webp',
 ];
 
 const activeImageIndex = ref<number>(0);

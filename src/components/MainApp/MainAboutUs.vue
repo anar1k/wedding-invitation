@@ -2,8 +2,6 @@
 import UContainer from '@/components/UI/UContainer.vue';
 import UTitle from '@/components/UI/UTitle.vue';
 
-const circleUrl: string = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
-
 const texts: string[] = [
   'Дорогие друзья!',
   'Жить, любить, чувствовать. Однажды мы поняли, что нет ничего важнее этого. И что идти дальше мы хотим только вместе. А теперь мечтаем, чтобы день нашей свадьбы стал красивым и ярким событием на этом увлекательном пути.',
@@ -33,9 +31,10 @@ const texts: string[] = [
       <div class="flex justify-center items-center gap-x-6 md:gap-x-12 mb-12 md:mb-16">
         <el-avatar
           class="about-us__avatar"
-          :src="circleUrl"
+          src="/images/karina.webp"
           data-aos="zoom-in"
           data-aos-anchor-placement="bottom-bottom"
+          alt=""
         />
 
         <div
@@ -54,22 +53,23 @@ const texts: string[] = [
 
         <el-avatar
           class="about-us__avatar"
-          :src="circleUrl"
+          src="/images/anar.webp"
           data-aos="zoom-in"
           data-aos-anchor-placement="bottom-bottom"
+          alt=""
         />
       </div>
     </u-container>
 
     <img
       src="/images/flowers-2.webp"
-      class="hidden md:block absolute left-0 bottom-0 h-64 -z-10 -scale-x-100"
+      class="hidden md:block absolute left-0 bottom-0 h-64 -scale-x-100"
       alt=""
     >
 
     <img
       src="/images/flowers-3.webp"
-      class="hidden md:block absolute right-0 bottom-0 h-80 -z-10"
+      class="hidden md:block absolute right-0 bottom-0 h-80"
       alt=""
     >
   </section>
