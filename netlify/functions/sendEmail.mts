@@ -22,6 +22,8 @@ export default async (event: Request) => {
     } = body;
 
     const myEmail: string = 'aanar1k14wedding@gmail.com';
+    const password: string = process.env.EMAIL_PASSWORD
+    const password2: string = Netlify.env.get('EMAIL_PASSWORD');
 
     // Создаем транспорт для отправки email
     const transporter = nodemailer.createTransport({
@@ -42,6 +44,9 @@ export default async (event: Request) => {
     if (anotherDrink) {
         text += `Другие напитки: ${ anotherDrink ? anotherDrink : '' }`
     }
+
+    text += `password ${password}`
+    text += `password2 ${password2}`
 
     // Определяем содержимое email
     const mailOptions = {
