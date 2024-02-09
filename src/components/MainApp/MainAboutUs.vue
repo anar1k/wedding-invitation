@@ -61,13 +61,13 @@ const texts: string[] = [
     </u-container>
 
     <img
-      src="/images/flowers-2.webp"
+      src="/images/flowers-1.webp"
       class="hidden md:block absolute left-0 bottom-0 h-64 -scale-x-100"
       alt=""
     >
 
     <img
-      src="/images/flowers-3.webp"
+      src="/images/flowers-2.webp"
       class="hidden md:block absolute right-0 bottom-0 h-80"
       alt=""
     >

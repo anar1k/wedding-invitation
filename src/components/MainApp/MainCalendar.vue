@@ -21,7 +21,7 @@ const getClassForCell = (data: TDataCell): string => {
 </script>
 
 <template>
-  <section class="relative">
+  <section>
     <u-container>
       <el-calendar
         inert
@@ -59,18 +59,6 @@ const getClassForCell = (data: TDataCell): string => {
         </template>
       </el-calendar>
     </u-container>
-
-    <img
-      src="/images/flowers-1.webp"
-      class="hidden md:block absolute right-0 bottom-0 h-80 -scale-x-100 -z-10"
-      alt=""
-    >
-
-    <img
-      src="/images/flowers-1.webp"
-      class="hidden md:block absolute left-0 bottom-0 h-80 -z-10"
-      alt=""
-    >
   </section>
 </template>
 
