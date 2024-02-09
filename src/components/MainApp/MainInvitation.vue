@@ -6,12 +6,6 @@ import { useInvitationStore } from '@/stores/invitation';
 import { storeToRefs } from 'pinia';
 import type { ButtonType } from 'element-plus';
 
-
-const texts: string[] = [
-  'Пожалуйста, подтвердите участие.',
-  'Мы стараемся сделать праздник незабываемым, поэтому будем рады, если вы подтвердите свое присутствие до 20.04.2024.'
-];
-
 const invitationStore = useInvitationStore();
 
 const { isSuccess, isAccept } = storeToRefs(invitationStore);
@@ -54,16 +48,14 @@ const emit = defineEmits<{
         Приглашение
       </u-title>
 
-      <ul class="text-lg flex flex-col gap-y-3 mb-4">
-        <li
-          v-for="(text, index) in texts"
-          :key="index"
-          data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom"
-        >
-          {{ text }}
-        </li>
-      </ul>
+      <p
+        class="text-lg mb-4"
+        data-aos="fade-up"
+        data-aos-anchor-placement="bottom-bottom"
+      >
+        Мы стараемся сделать праздник незабываемым,
+        поэтому будем рады, если вы подтвердите свое присутствие до 20.04.2024.
+      </p>
 
       <div
         data-aos="fade-up"

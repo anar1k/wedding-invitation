@@ -20,8 +20,18 @@ module.exports = {
 
       colors: {
         primary: {
-          DEFAULT: '#fb7185',
-          ...colors.rose
+          DEFAULT: '#af9888',
+          50: '#f8f6f4',
+          100: '#eeebe6',
+          200: '#ddd4cb',
+          300: '#bcaa9a',
+          400: '#af9888',
+          500: '#9f8170',
+          600: '#927264',
+          700: '#7a5d54',
+          800: '#644e48',
+          900: '#52413c',
+          950: '#2b211f',
         },
 
         neutral: {
